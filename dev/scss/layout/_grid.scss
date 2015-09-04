@@ -6,34 +6,25 @@
 //  GRID LAYOUT
 //=================================================================
 
-.l-wrapper {
-	padding: 0 5%;
-	margin: 0 auto;
-}
-
-.l-center60 {
-	width: 60%;
+.l-centerBlock {
+	width: 70%;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.l-r90 {
-	width: 90%;
+.l-level1 {
+		width: 90%;
+		margin-left: 5%;
+}
+
+.l-level2 {
+	width: 85%;
 	margin-left: 10%;
 }
 
-.l-r80 {
+.l-level3 {
 	width: 80%;
-	margin-left: 20%;
-}
-
-.l-r50 {
-	width: 50%;
-	margin-left: 50%;
-}
-
-.l-l50 {
-	width: 50%;
+	margin-left: 15%;
 }
 
 .l-chunk {
@@ -45,8 +36,43 @@
 	position: absolute;
 	display: block;
 	top: 0;
-	left: -5vw;
-	width: 2.5vw;
+	left: 0;
+	width: 2.5%;
 	border-top: 6px solid $primaryContent;
+
+}
+
+
+
+//=================================================================
+//  GRID LAYOUT - MEDIA QUERIES
+//=================================================================
+
+@media screen and (min-width: 500px) {
+	.l-level1 {
+		width: 90%;
+		margin-left: 5%;
+	}
+
+	.l-level2 {
+		width: 80%;
+		margin-left: 15%;
+	}
+
+	.l-level3 {
+		width: 70%;
+		margin-left: 25%;
+	}
+
+	.l-chunk::before {
+		width: 5%;
+	}
+}
+
+@media screen and (min-width: 640px) {
+
+}
+
+@media screen and (min-width: 850px) {
 
 }
