@@ -1,0 +1,242 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@font-face {
+  font-family: 'Hack';
+  src: url("../fonts/hack/eot/latin/hack-regular-latin-webfont.eot?v=2.010");
+  src: url("../fonts/hack/eot/latin/hack-regular-latin-webfont.eot?#iefix&v=2.010") format("embedded-opentype"), url("../fonts/hack/woff2/latin/hack-regular-latin-webfont.woff2?v=2.010") format("woff2"), url("../fonts/hack/woff/latin/hack-regular-latin-webfont.woff?v=2.010") format("woff"), url("../fonts/hack/ttf/latin/hack-regular-latin-webfont.ttf?v=2.010") format("truetype"), url("../fonts/hack/svg/latin/hack-regular-latin-webfont.svg?v=2.010#hackregular") format("svg");
+  font-weight: 400;
+  font-style: normal; }
+@font-face {
+  font-family: 'Hack';
+  src: url("../fonts/hack/eot/latin/hack-bold-latin-webfont.eot?v=2.010");
+  src: url("../fonts/hack/eot/latin/hack-bold-latin-webfont.eot?#iefix&v=2.010") format("embedded-opentype"), url("../fonts/hack/woff2/latin/hack-bold-latin-webfont.woff2?v=2.010") format("woff2"), url("../fonts/hack/woff/latin/hack-bold-latin-webfont.woff?v=2.010") format("woff"), url("../fonts/hack/ttf/latin/hack-bold-latin-webfont.ttf?v=2.010") format("truetype"), url("../fonts/hack/svg/latin/hack-bold-latin-webfont.svg?v=2.010#hackbold") format("svg");
+  font-weight: 700;
+  font-style: normal; }
+@font-face {
+  font-family: 'Hack';
+  src: url("../fonts/hack/eot/latin/hack-regularoblique-latin-webfont.eot?v=2.010");
+  src: url("../fonts/hack/eot/latin/hack-regularoblique-latin-webfont.eot?#iefix&v=2.010") format("embedded-opentype"), url("../fonts/hack/woff2/latin/hack-regularoblique-latin-webfont.woff2?v=2.010") format("woff2"), url("../fonts/hack/woff/latin/hack-regularoblique-latin-webfont.woff?v=2.010") format("woff"), url("../fonts/hack/ttf/latin/hack-regularoblique-latin-webfont.ttf?v=2.010") format("truetype"), url("../fonts/hack/svg/latin/hack-regularoblique-latin-webfont.svg?v=2.010#hackoblique") format("svg");
+  font-weight: 400;
+  font-style: italic; }
+@font-face {
+  font-family: 'Hack';
+  src: url("../fonts/hack/eot/latin/hack-boldoblique-latin-webfont.eot?v=2.010");
+  src: url("../fonts/hack/eot/latin/hack-boldoblique-latin-webfont.eot?#iefix&v=2.010") format("embedded-opentype"), url("../fonts/hack/woff2/latin/hack-boldoblique-latin-webfont.woff2?v=2.010") format("woff2"), url("../fonts/hack/woff/latin/hack-boldoblique-latin-webfont.woff?v=2.010") format("woff"), url("../fonts/hack/ttf/latin/hack-boldoblique-latin-webfont.ttf?v=2.010") format("truetype"), url("../fonts/hack/svg/latin/hack-boldoblique-latin-webfont.svg?v=2.010#hackboldoblique") format("svg");
+  font-weight: 700;
+  font-style: italic; }
+@font-face {
+  font-family: 'NeueHaas';
+  src: url("../fonts/neuehaas/2E0CC6_0_0.eot");
+  src: url("../fonts/neuehaas/2E0CC6_0_0.eot?#iefix") format("embedded-opentype"), url("../fonts/neuehaas/2E0CC6_0_0.woff2") format("woff2"), url("../fonts/neuehaas/2E0CC6_0_0.woff") format("woff"), url("../fonts/neuehaas/2E0CC6_0_0.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal; }
+@font-face {
+  font-family: 'NeueHaas';
+  src: url("../fonts/neuehaas/2E0CC6_1_0.eot");
+  src: url("../fonts/neuehaas/2E0CC6_1_0.eot?#iefix") format("embedded-opentype"), url("../fonts/neuehaas/2E0CC6_1_0.woff2") format("woff2"), url("../fonts/neuehaas/2E0CC6_1_0.woff") format("woff"), url("../fonts/neuehaas/2E0CC6_1_0.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic; }
+@font-face {
+  font-family: 'NeueHaas';
+  src: url("../fonts/neuehaas/2E0CC6_2_0.eot");
+  src: url("../fonts/neuehaas/2E0CC6_2_0.eot?#iefix") format("embedded-opentype"), url("../fonts/neuehaas/2E0CC6_2_0.woff2") format("woff2"), url("../fonts/neuehaas/2E0CC6_2_0.woff") format("woff"), url("../fonts/neuehaas/2E0CC6_2_0.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal; }
+@font-face {
+  font-family: 'NeueHaas';
+  src: url("../fonts/neuehaas/2E0CC6_3_0.eot");
+  src: url("../fonts/neuehaas/2E0CC6_3_0.eot?#iefix") format("embedded-opentype"), url("../fonts/neuehaas/2E0CC6_3_0.woff2") format("woff2"), url("../fonts/neuehaas/2E0CC6_3_0.woff") format("woff"), url("../fonts/neuehaas/2E0CC6_3_0.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal; }
+body {
+  color: #202020;
+  line-height: 1.4; }
+
+h1, h2, blockquote {
+  font-weight: 900; }
+
+h1 {
+  font-size: 3rem; }
+
+h2 {
+  font-size: 2.25rem; }
+
+h3 {
+  font-size: 1.75rem;
+  font-weight: 500; }
+
+figcaption {
+  font-size: .85rem; }
+
+blockquote {
+  font-size: 1.5rem; }
+
+a {
+  display: inline-block;
+  color: #f25405;
+  font-weight: 500;
+  text-decoration: none; }
+  a:hover {
+    transform: translateY(-1px) translateX(-1px); }
+
+.u-center {
+  margin-right: auto;
+  margin-left: auto; }
+
+.u-centerChildren {
+  text-align: center; }
+
+.u-blockLink {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  text-indent: 200%;
+  white-space: nowrap;
+  font-size: 0;
+  opacity: 0; }
+
+.l-wrapper {
+  padding: 0 5%;
+  margin: 0 auto; }
+
+.l-center60 {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto; }
+
+.l-r90 {
+  width: 90%;
+  margin-left: 10%; }
+
+.l-r80 {
+  width: 80%;
+  margin-left: 20%; }
+
+.l-r50 {
+  width: 50%;
+  margin-left: 50%; }
+
+.l-l50 {
+  width: 50%; }
+
+.l-chunk {
+  position: relative; }
+
+.l-chunk::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: -5vw;
+  width: 2.5vw;
+  border-top: 6px solid #202020; }
+
+.article__paragraph:not(:last-child) {
+  margin-bottom: 1.5em; }
+
+.article__passage .article__paragraph:first-child:first-letter {
+  float: left;
+  margin-left: -.058em;
+  margin-bottom: -.07em;
+  padding-top: .05em;
+  padding-right: .029em;
+  font-size: 5em;
+  font-weight: 500;
+  line-height: .88em; }
+
+.itemList {
+  position: relative; }
+  .itemList__name {
+    position: absolute;
+    text-transform: uppercase;
+    line-height: .75;
+    transform-origin: 0 0;
+    transform: rotate(90deg) translateY(-0.325em); }
+
+.itemList__item {
+  background: #fff;
+  padding: .5rem; }
+  .itemList__item:first-of-type {
+    padding-top: 0rem; }
+  .itemList__item__title {
+    text-transform: capitalize;
+    color: #f25405;
+    line-height: .95em; }
+  .itemList__item__subtitle {
+    margin-bottom: .75em;
+    color: #a0a4a3;
+    font-weight: 500; }
+
+.itemList__linkFull {
+  padding: .5rem;
+  border-top: 3px solid #202020;
+  font-size: .85rem;
+  text-align: right; }
+
+.itemList__tile {
+  position: relative;
+  margin-bottom: 3rem;
+  transition: all .2s ease-in-out; }
+  .itemList__tile::after {
+    background-color: 3px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><defs><pattern id="pinstripe" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)" width="16px" height="16px"><line x1="8px" y="0" x2="8px" y2="16px" stroke="%23e6e6e6" stroke-width="6px" /></pattern></defs><rect width="100%" height="100%" fill="url(%23pinstripe)" /></svg>');
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: all .2s ease-in-out; }
+  .itemList__tile:hover {
+    transform: translateX(-5px) translateY(-5px);
+    color: #f25405;
+    transition: all .2s ease-in-out; }
+  .itemList__tile:hover::after {
+    transform: translateX(5px) translateY(5px);
+    transition: all .2s ease-in-out; }
+
+/*# sourceMappingURL=application.css.map */

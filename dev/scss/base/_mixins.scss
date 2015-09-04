@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+
+
+//=================================================================
+//  MIXINS
+//=================================================================
+
+//-----------------------------------------------------------------
+// Hatching
+
+///   !!!
+///   Problem with the color variable in stroke=" ". Variable returns hex color, but firefox needs # symbols to be escaped. found no ///   way to escape the hash in the variable interpolation... needs fixing. stroke should be something like "stroke="#{COLORVARIABLE} ///   and a $color argument should be present on hatching -- dom | 15-09-03
+
+@mixin hatching($color, $bg:transparent, $stripeWidth:5, $gapWidth:10){
+	$width: $stripeWidth + $gapWidth;
+	$halfWidth: $width / 2;
+	background-color: $bg;
+	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><defs><pattern id="pinstripe" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)" width="#{$width}" height="#{$width}"><line x1="#{$halfWidth}" y="0" x2="#{$halfWidth}" y2="#{$width}" stroke="%23e6e6e6" stroke-width="#{$stripeWidth}" /></pattern></defs><rect width="100%" height="100%" fill="url(%23pinstripe)" /></svg>');
+}

@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+
+
+//=================================================================
+//  BASE ELEMENTS
+//=================================================================
+
+.lib__section {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	background-color: #fff;
+	box-shadow: 0 0 5px rgba(0,0,0,.2)
+}
+
+.lib__section__headline {
+	margin-bottom: 2rem;
+	font-weight: bold;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	text-align: center;
+	color: #a0a4a3;
+	border-bottom: 1px solid #e6e6e6;
+}
+
+.lib__element {
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+}
+
+.lib__element__name {
+	font-family: "Hack", monospace;
+	font-weight: bold;
+	color: firebrick;
+}
+
+//=================================================================
+//  SPECIAL ELEMENTS
+//=================================================================
+
+//-----------------------------------------------------------------
+// Layout Element Visualisation
+
+.lib__element--layoutBlock {
+	padding: 2rem;
+	background-color: darkgrey;
+	color: white;
+}
+
+//-----------------------------------------------------------------
+// Color Swatches
+
+.lib__element--colorSwatch {
+	display: inline-block;
+	margin-left: 10%;
+	padding: .5rem;
+	width: 20%;
+	height: 150px;
+	font-family: monospace;
+	font-weight: bold;
+	border: 10px solid rgba(255,255,255,.4);
+	box-shadow: 0 0 5px rgba(0,0,0,.3);
+
+	&--primaryLink {
+		background-color: $primaryLink;
+		color: #fff;
+	}
+	&--primaryContent {
+		background-color: $primaryContent;
+		color: #fff;
+	}
+	&--primaryBG {
+		background-color: $primaryBG;
+	}
+	&--darkBG {
+		background-color: $darkBG;
+		color: #fff;
+	}
+	&--lightBG {
+		background-color: $lightBG;
+	}
+	&--lightContent {
+		background-color: $lightContent;
+	}
+}
+
+//-----------------------------------------------------------------
+// Type Elements
+
+.lib__element--type,
+.lib__element__module {
+	font-family: "NeueHaas", sans-serif;
+	color: #202020;
+}

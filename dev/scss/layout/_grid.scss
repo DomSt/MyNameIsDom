@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+
+
+//=================================================================
+//  GRID LAYOUT
+//=================================================================
+
+.l-wrapper {
+	padding: 0 5%;
+	margin: 0 auto;
+}
+
+.l-center60 {
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.l-r90 {
+	width: 90%;
+	margin-left: 10%;
+}
+
+.l-r80 {
+	width: 80%;
+	margin-left: 20%;
+}
+
+.l-r50 {
+	width: 50%;
+	margin-left: 50%;
+}
+
+.l-l50 {
+	width: 50%;
+}
+
+.l-chunk {
+	position: relative;
+}
+
+.l-chunk::before {
+	content: "";
+	position: absolute;
+	display: block;
+	top: 0;
+	left: -5vw;
+	width: 2.5vw;
+	border-top: 6px solid $primaryContent;
+
+}

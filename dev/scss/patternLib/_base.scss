@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+
+
+//=================================================================
+//  BASE
+//=================================================================
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Hack", monospace;
+	background-color: #e6e6e6;
+	color: $primaryContent;
+}
