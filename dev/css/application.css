@@ -8,7 +8,7 @@ dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
+figure, figcaption, .itemList__linkFull, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
@@ -18,7 +18,7 @@ time, mark, audio, video {
   font: inherit;
   vertical-align: baseline; }
 
-article, aside, details, figcaption, figure,
+article, aside, details, figcaption, .itemList__linkFull, figure,
 footer, header, hgroup, menu, nav, section {
   display: block; }
 
@@ -90,26 +90,31 @@ table {
   font-style: normal; }
 body {
   color: #202020;
-  line-height: 1.4; }
+  font-size: 16px;
+  line-height: 1.25; }
 
 h1, h2, blockquote {
   font-weight: 900; }
 
 h1 {
-  font-size: 3rem; }
+  font-size: 2rem;
+  line-height: 1.25; }
 
 h2 {
-  font-size: 2.25rem; }
+  font-size: 1.625rem;
+  line-height: 1.15384615; }
 
 h3 {
-  font-size: 1.75rem;
+  font-size: 1.375rem;
+  line-height: 1.13636364;
   font-weight: 500; }
 
-figcaption {
+figcaption, .itemList__linkFull {
   font-size: .85rem; }
 
 blockquote {
-  font-size: 1.5rem; }
+  font-size: 1.25rem;
+  line-height: 1.25; }
 
 a {
   display: inline-block;
@@ -119,6 +124,35 @@ a {
   a:hover {
     transform: translateY(-1px) translateX(-1px); }
 
+@media screen and (min-width: 500px) {
+  body {
+    line-height: 1.375; } }
+@media screen and (min-width: 640px) {
+  h1 {
+    font-size: 2.5rem;
+    line-height: 1.125; }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 1.25; }
+
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.25; }
+
+  blockquote {
+    font-size: 1.5rem;
+    line-height: 1.45833333; } }
+@media screen and (min-width: 850px) {
+  h1 {
+    font-size: 3rem;
+    line-height: 1.05; }
+
+  h2 {
+    font-size: 2.25rem; }
+
+  h3 {
+    font-size: 1.75rem; } }
 .u-center {
   margin-right: auto;
   margin-left: auto; }
@@ -177,16 +211,6 @@ a {
 .article__paragraph:not(:last-child) {
   margin-bottom: 1.5em; }
 
-.article__passage .article__paragraph:first-child:first-letter {
-  float: left;
-  margin-left: -.058em;
-  margin-bottom: -.07em;
-  padding-top: .05em;
-  padding-right: .029em;
-  font-size: 5em;
-  font-weight: 500;
-  line-height: .88em; }
-
 .itemList {
   position: relative; }
   .itemList__name {
@@ -203,8 +227,7 @@ a {
     padding-top: 0rem; }
   .itemList__item__title {
     text-transform: capitalize;
-    color: #f25405;
-    line-height: .95em; }
+    color: #f25405; }
   .itemList__item__subtitle {
     margin-bottom: .75em;
     color: #a0a4a3;
@@ -213,7 +236,6 @@ a {
 .itemList__linkFull {
   padding: .5rem;
   border-top: 3px solid #202020;
-  font-size: .85rem;
   text-align: right; }
 
 .itemList__tile {

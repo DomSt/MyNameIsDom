@@ -29,7 +29,6 @@
   &__title {
     text-transform: capitalize;
     color: $primaryLink;
-    line-height: .95em;
   }
 
   &__subtitle {
@@ -40,9 +39,9 @@
 }
 
 .itemList__linkFull {
+  @extend figcaption;
   padding: .5rem;
   border-top: 3px solid $primaryContent;
-  font-size: .85rem;
   text-align: right;
 }
 

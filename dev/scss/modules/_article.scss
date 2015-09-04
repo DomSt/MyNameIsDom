@@ -9,14 +9,3 @@
 .article__paragraph:not(:last-child) {
 	margin-bottom: 1.5em;
 }
-
-.article__passage .article__paragraph:first-child:first-letter {
-	float: left;
-	margin-left: -.058em;
-	margin-bottom: -.07em;
-	padding-top: .05em;
-	padding-right: .029em;
-	font-size: 5em;
-	font-weight: 500;
-	line-height: .88em;
-}
