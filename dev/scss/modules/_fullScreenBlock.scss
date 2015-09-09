@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+
+
+//=================================================================
+//  FULL SCREEN BLOCK
+//=================================================================
+
+.fullScreenBlock {
+  @extend blockquote;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+  height: 70vh;
+  padding: 15%;
+  color: $primaryBG;
+  background-color: $primaryContent;
+  font-weight: 400;
+}
+
+.fullScreenBlock__container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+//=================================================================
+//  FULL SCREEN BLOCK - MEDIA QUERIES
+//=================================================================
+
+//-----------------------------------------------------------------
+// Typographie
+
+@media screen and (min-width: 500px) {
+  .fullScreenBlock {
+    width: 70%;
+    padding: 10%;
+  }
+}
+
+@media screen and (min-width: 640px) {
+
+}
+
+@media screen and (min-width: 850px) {
+
+}

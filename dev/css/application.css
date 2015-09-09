@@ -1,5 +1,5 @@
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+h1, h2, h3, h4, h5, h6, p, blockquote, .fullScreenBlock, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small,
@@ -29,10 +29,10 @@ body {
 ol, ul {
   list-style: none; }
 
-blockquote, q {
+blockquote, .fullScreenBlock, q {
   quotes: none; }
 
-blockquote:before, blockquote:after,
+blockquote:before, .fullScreenBlock:before, blockquote:after, .fullScreenBlock:after,
 q:before, q:after {
   content: '';
   content: none; }
@@ -94,7 +94,7 @@ body {
   font-size: 16px;
   line-height: 1.25; }
 
-h1, h2, blockquote {
+h1, h2, blockquote, .fullScreenBlock {
   font-weight: 900; }
 
 h1 {
@@ -113,7 +113,7 @@ h3 {
 small, .itemList__linkFull, figcaption {
   font-size: .85rem; }
 
-blockquote {
+blockquote, .fullScreenBlock {
   font-size: 1.25rem;
   line-height: 1.25; }
 
@@ -141,7 +141,7 @@ a {
     font-size: 1.5rem;
     line-height: 1.25; }
 
-  blockquote {
+  blockquote, .fullScreenBlock {
     font-size: 1.5rem;
     line-height: 1.45833333; } }
 @media screen and (min-width: 850px) {
@@ -220,6 +220,28 @@ a {
 .article__paragraph:not(:last-child) {
   margin-bottom: 1.5em; }
 
+.fullScreenBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+  height: 70vh;
+  padding: 15%;
+  color: #fff;
+  background-color: #202020;
+  font-weight: 400; }
+
+.fullScreenBlock__container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center; }
+
+@media screen and (min-width: 500px) {
+  .fullScreenBlock {
+    width: 70%;
+    padding: 10%; } }
 .itemList {
   position: relative; }
   .itemList__name {
