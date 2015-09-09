@@ -41,7 +41,7 @@
 }
 
 .itemList__linkFull {
-  @extend figcaption;
+  @extend small;
   padding: .5rem;
   border-top: 3px solid $primaryContent;
   text-align: right;
@@ -53,7 +53,7 @@
   transition: all .2s ease-in-out;
 
   &::after {
-    @include hatching($primaryBG, 3px, 6px);
+    @include hatching($primaryBG, transparent, 3px, 6px);
     content: "";
     position: absolute;
     top: 0;
