@@ -53,7 +53,7 @@
   transition: all .2s ease-in-out;
 
   &::after {
-    @include hatching($primaryBG, transparent, 3px, 6px);
+    @include hatching;
     content: "";
     position: absolute;
     top: 0;
