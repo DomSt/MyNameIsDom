@@ -17,6 +17,10 @@
   color: $primaryBG;
   background-color: $primaryContent;
   font-weight: 400;
+    @include respond-to("small") {
+      width: 70%;
+      padding: 10%;
+    }
 }
 
 .fullScreenBlock__container {
@@ -25,28 +29,4 @@
   height: 100vh;
   align-items: center;
   justify-content: center;
-}
-
-
-
-//=================================================================
-//  FULL SCREEN BLOCK - MEDIA QUERIES
-//=================================================================
-
-//-----------------------------------------------------------------
-// Typographie
-
-@media screen and (min-width: 500px) {
-  .fullScreenBlock {
-    width: 70%;
-    padding: 10%;
-  }
-}
-
-@media screen and (min-width: 640px) {
-
-}
-
-@media screen and (min-width: 850px) {
-
 }

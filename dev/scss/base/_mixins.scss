@@ -12,7 +12,6 @@
 ///   !
 ///   Using string concatenation beaucse interpolation / escape bug in libsass. Should be fixed with libsass 3.3
 ///		Opacity 1 doesn't work in Firefox beacuse escape problem with # symbol in url strings.
-
 @mixin hatching($color:#000, $opacity:.105, $stripeWidth:3, $gapWidth:6) {
 	@if $opacity == 1 {
 			@warn "Opacity 1 in hatching won't work in firefox. See description for more information"
@@ -24,3 +23,18 @@
 }
 
 // #TODO:30 Create a mediaQuerie mixin.
+
+//-----------------------------------------------------------------
+// Media Queries
+@mixin respond-to($breakpoint) {
+  $value: map-get($breakpoints, $breakpoint);
+
+  @if $value != null {
+    @media screen and (min-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "No value retrieved from `#{$breakpoint}`. "
+        + "Please use values defined in `$breakpoints` map.";
+  }
+}

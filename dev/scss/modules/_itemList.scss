@@ -10,13 +10,25 @@
   position: relative;
 
   &__name {
-    position: absolute;
-    top: 0;
-    left: 5%;
+    margin-bottom: .75em;
+    padding-left: 5%;
     text-transform: uppercase;
-    line-height: .75;
-    transform-origin: 0 0;
-    transform: rotate(90deg) translateY(-.75em);
+      @include respond-to("small") {
+        padding-left: 15%;
+      }
+      @include respond-to("medium") {
+        position: absolute;
+        top: 0;
+        left: 15%;
+        padding-left: 0;
+        line-height: .75;
+        transform-origin: 0 0;
+        transform: rotate(90deg);
+      }
+    /*
+      @include respond-to("small") {
+        left: 15%;
+      } */
   }
 }
 
@@ -79,24 +91,4 @@
 .itemList__tile > .itemList__item {
   padding-right: .5rem;
   padding-bottom: .5rem;
-}
-
-
-
-//=================================================================
-//  ITEMLIST - MEDIA QUERIES
-//=================================================================
-
-@media screen and (min-width: 500px) {
-  .itemList__name {
-    left: 15%;
-  }
-}
-
-@media screen and (min-width: 640px) {
-
-}
-
-@media screen and (min-width: 850px) {
-
 }

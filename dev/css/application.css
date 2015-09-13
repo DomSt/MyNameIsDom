@@ -101,6 +101,9 @@ body {
   color: #202020;
   font-size: 16px;
   line-height: 1.25; }
+  @media screen and (min-width: 500px) {
+    body {
+      line-height: 1.375; } }
 
 h1, h2, blockquote, .fullScreenBlock {
   font-weight: 900; }
@@ -108,15 +111,37 @@ h1, h2, blockquote, .fullScreenBlock {
 h1 {
   font-size: 2rem;
   line-height: 1.25; }
+  @media screen and (min-width: 640px) {
+    h1 {
+      font-size: 2.5rem;
+      line-height: 1.125; } }
+  @media screen and (min-width: 850px) {
+    h1 {
+      font-size: 3rem;
+      line-height: 1.05; } }
 
 h2 {
   font-size: 1.625rem;
   line-height: 1.15384615; }
+  @media screen and (min-width: 640px) {
+    h2 {
+      font-size: 2rem;
+      line-height: 1.25; } }
+  @media screen and (min-width: 850px) {
+    h2 {
+      font-size: 2.25rem; } }
 
 h3 {
   font-size: 1.375rem;
   line-height: 1.13636364;
   font-weight: 500; }
+  @media screen and (min-width: 640px) {
+    h3 {
+      font-size: 1.5rem;
+      line-height: 1.25; } }
+  @media screen and (min-width: 850px) {
+    h3 {
+      font-size: 1.75rem; } }
 
 small, .itemList__linkFull, figcaption {
   font-size: .85rem; }
@@ -124,6 +149,10 @@ small, .itemList__linkFull, figcaption {
 blockquote, .fullScreenBlock {
   font-size: 1.25rem;
   line-height: 1.25; }
+  @media screen and (min-width: 640px) {
+    blockquote, .fullScreenBlock {
+      font-size: 1.5rem;
+      line-height: 1.45833; } }
 
 a {
   display: inline-block;
@@ -133,33 +162,6 @@ a {
   a:hover {
     -webkit-transform: translateY(-1px) translateX(-1px);
             transform: translateY(-1px) translateX(-1px); }
-
-@media screen and (min-width: 500px) {
-  body {
-    line-height: 1.375; } }
-
-@media screen and (min-width: 640px) {
-  h1 {
-    font-size: 2.5rem;
-    line-height: 1.125; }
-  h2 {
-    font-size: 2rem;
-    line-height: 1.25; }
-  h3 {
-    font-size: 1.5rem;
-    line-height: 1.25; }
-  blockquote, .fullScreenBlock {
-    font-size: 1.5rem;
-    line-height: 1.45833333; } }
-
-@media screen and (min-width: 850px) {
-  h1 {
-    font-size: 3rem;
-    line-height: 1.05; }
-  h2 {
-    font-size: 2.25rem; }
-  h3 {
-    font-size: 1.75rem; } }
 
 .u-center {
   margin-right: auto;
@@ -192,10 +194,18 @@ a {
 .l-level2 {
   width: 85%;
   margin-left: 10%; }
+  @media screen and (min-width: 500px) {
+    .l-level2 {
+      width: 80%;
+      margin-left: 15%; } }
 
 .l-level3 {
   width: 80%;
   margin-left: 15%; }
+  @media screen and (min-width: 500px) {
+    .l-level3 {
+      width: 70%;
+      margin-left: 25%; } }
 
 .l-chunk {
   position: relative; }
@@ -208,19 +218,9 @@ a {
   left: 0;
   width: 2.5%;
   border-top: 6px solid #202020; }
-
-@media screen and (min-width: 500px) {
-  .l-level1 {
-    width: 90%;
-    margin-left: 5%; }
-  .l-level2 {
-    width: 80%;
-    margin-left: 15%; }
-  .l-level3 {
-    width: 70%;
-    margin-left: 25%; }
-  .l-chunk::before {
-    width: 5%; } }
+  @media screen and (min-width: 500px) {
+    .l-chunk::before {
+      width: 5%; } }
 
 .article__paragraph:not(:last-child) {
   margin-bottom: 1.5em; }
@@ -241,6 +241,10 @@ a {
   color: #fff;
   background-color: #202020;
   font-weight: 400; }
+  @media screen and (min-width: 500px) {
+    .fullScreenBlock {
+      width: 70%;
+      padding: 10%; } }
 
 .fullScreenBlock__container {
   display: -webkit-flex;
@@ -255,23 +259,30 @@ a {
       -ms-flex-pack: center;
           justify-content: center; }
 
-@media screen and (min-width: 500px) {
-  .fullScreenBlock {
-    width: 70%;
-    padding: 10%; } }
-
 .itemList {
   position: relative; }
   .itemList__name {
-    position: absolute;
-    top: 0;
-    left: 5%;
+    margin-bottom: .75em;
+    padding-left: 5%;
     text-transform: uppercase;
-    line-height: .75;
-    -webkit-transform-origin: 0 0;
-            transform-origin: 0 0;
-    -webkit-transform: rotate(90deg) translateY(-0.75em);
-            transform: rotate(90deg) translateY(-0.75em); }
+    /*
+      @include respond-to("small") {
+        left: 15%;
+      } */ }
+    @media screen and (min-width: 500px) {
+      .itemList__name {
+        padding-left: 15%; } }
+    @media screen and (min-width: 640px) {
+      .itemList__name {
+        position: absolute;
+        top: 0;
+        left: 15%;
+        padding-left: 0;
+        line-height: .75;
+        -webkit-transform-origin: 0 0;
+                transform-origin: 0 0;
+        -webkit-transform: rotate(90deg);
+                transform: rotate(90deg); } }
 
 .itemList__item {
   background: #fff; }
@@ -318,9 +329,5 @@ a {
 .itemList__tile > .itemList__item {
   padding-right: .5rem;
   padding-bottom: .5rem; }
-
-@media screen and (min-width: 500px) {
-  .itemList__name {
-    left: 15%; } }
 
 /*# sourceMappingURL=application.css.map */

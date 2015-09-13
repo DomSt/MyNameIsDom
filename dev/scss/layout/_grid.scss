@@ -20,11 +20,19 @@
 .l-level2 {
 	width: 85%;
 	margin-left: 10%;
+		@include respond-to("small") {
+			width: 80%;
+			margin-left: 15%;
+		}
 }
 
 .l-level3 {
 	width: 80%;
 	margin-left: 15%;
+		@include respond-to("small") {
+			width: 70%;
+			margin-left: 25%;
+		}
 }
 
 .l-chunk {
@@ -39,40 +47,7 @@
 	left: 0;
 	width: 2.5%;
 	border-top: 6px solid $primaryContent;
-
-}
-
-
-
-//=================================================================
-//  GRID LAYOUT - MEDIA QUERIES
-//=================================================================
-
-@media screen and (min-width: 500px) {
-	.l-level1 {
-		width: 90%;
-		margin-left: 5%;
-	}
-
-	.l-level2 {
-		width: 80%;
-		margin-left: 15%;
-	}
-
-	.l-level3 {
-		width: 70%;
-		margin-left: 25%;
-	}
-
-	.l-chunk::before {
-		width: 5%;
-	}
-}
-
-@media screen and (min-width: 640px) {
-
-}
-
-@media screen and (min-width: 850px) {
-
+		@include respond-to("small") {
+			width: 5%;
+		}
 }
