@@ -9,7 +9,9 @@ var imagemin = require("gulp-imagemin");
 var cache = require("gulp-cache");
 var del = require("del");
 var runSequence = require("run-sequence");
-
+var changed = require("gulp-changed");
+var autoprefixer = require("gulp-autoprefixer");
+var sourcemaps = require("gulp-sourcemaps");
 
 //  ----------------------------------------------------------------------------
 //  GENERAL GULP TASKS
@@ -22,19 +24,28 @@ var runSequence = require("run-sequence");
 // Compiling SCSS to CSS
 gulp.task("sass", function() {
   return gulp.src("dev/scss/**/*.scss")
-    .pipe(sass())
+    //#BACKLOG:10 gulp-changed doesn't work atm. Find out why and fix the sass stream. Perhaps ask Zell on css-tricks-article.
+    //.pipe(changed("dev/css", { extension: '.css' }))
+    .pipe(sourcemaps.init())
+      .pipe(sass())
+      .pipe(autoprefixer({
+        browsers: ["last 2 versions"]
+      }))
+    .pipe(sourcemaps.write("./."))
     .pipe(gulp.dest("dev/css"))
     .pipe(browserSync.reload({
       stream: true
     }))
 });
 
-// TODO: Configure BrowserSync for patternLib. Use firefox DevEd.
 //Starting server and syncing browser
+// #BACKLOG:10 Add firefox DevEd to browser.
 gulp.task("browserSync", function() {
   browserSync({
     server: {
-      baseDir: "dev"
+      baseDir: "dev",
+      index: "patternLib.html",
+      browser: ["google chrome"]
     }
   })
 });
