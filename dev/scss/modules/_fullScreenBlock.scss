@@ -14,19 +14,20 @@
   width: 90%;
   height: 70vh;
   padding: 15%;
+  font-weight: 400;
   color: $primaryBG;
   background-color: $primaryContent;
-  font-weight: 400;
-    @include respond-to("small") {
-      width: 70%;
-      padding: 10%;
-    }
+
+  @include respond-to("small") {
+    width: 70%;
+    padding: 10%;
+  }
 }
 
 .fullScreenBlock__container {
   display: flex;
-  width: 100%;
-  height: 100vh;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100vh;
 }

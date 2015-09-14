@@ -7,47 +7,50 @@
 //=================================================================
 
 .l-centerBlock {
-	width: 70%;
-	margin-left: auto;
-	margin-right: auto;
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .l-level1 {
-		width: 90%;
-		margin-left: 5%;
+  width: 90%;
+  margin-left: 5%;
 }
 
 .l-level2 {
-	width: 85%;
-	margin-left: 10%;
-		@include respond-to("small") {
-			width: 80%;
-			margin-left: 15%;
-		}
+  width: 85%;
+  margin-left: 10%;
+
+  @include respond-to("small") {
+    width: 80%;
+    margin-left: 15%;
+  }
 }
 
 .l-level3 {
-	width: 80%;
-	margin-left: 15%;
-		@include respond-to("small") {
-			width: 70%;
-			margin-left: 25%;
-		}
+  width: 80%;
+  margin-left: 15%;
+
+  @include respond-to("small") {
+    width: 70%;
+    margin-left: 25%;
+  }
 }
 
 .l-chunk {
-	position: relative;
+  position: relative;
 }
 
 .l-chunk::before {
-	content: "";
-	position: absolute;
-	display: block;
-	top: 0;
-	left: 0;
-	width: 2.5%;
-	border-top: 6px solid $primaryContent;
-		@include respond-to("small") {
-			width: 5%;
-		}
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 2.5%;
+  border-top: 6px solid $primaryContent;
+
+  @include respond-to("small") {
+    width: 5%;
+  }
 }

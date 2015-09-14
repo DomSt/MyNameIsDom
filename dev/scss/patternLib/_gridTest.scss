@@ -6,24 +6,26 @@
 //  GRID OVERLAY
 //=================================================================
 
+// scss-lint:disable Comment
+
 .gridTest {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 100;
-	pointer-events: none;
-	/*display: none;*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  pointer-events: none;
+  /*display: none;*/
 }
 
 .gridTest__col {
-	position: relative;
-	display: inline-block;
-	width: 10%;
-	height: 99.999vh;
-	border: 1px solid rgba($primaryLink,.2);
+  position: relative;
+  display: inline-block;
+  width: 10%;
+  height: 99.999vh;
+  border: 1px solid rgba($primaryLink, .2);
 }
 
 .gridTest__col:first-child {
-	margin-left: 5%;
+  margin-left: 5%;
 }

@@ -7,11 +7,11 @@
 //=================================================================
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	font-family: "Hack", monospace;
-	background-color: #e6e6e6;
-	color: $primaryContent;
+  font-family: "Hack", monospace;
+  color: $primaryContent;
+  background-color: $lightBG;
 }

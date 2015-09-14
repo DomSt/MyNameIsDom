@@ -9,7 +9,6 @@ var imagemin = require("gulp-imagemin");
 var cache = require("gulp-cache");
 var del = require("del");
 var runSequence = require("run-sequence");
-var changed = require("gulp-changed");
 var autoprefixer = require("gulp-autoprefixer");
 var sourcemaps = require("gulp-sourcemaps");
 
@@ -24,10 +23,8 @@ var sourcemaps = require("gulp-sourcemaps");
 // Compiling SCSS to CSS
 gulp.task("sass", function() {
   return gulp.src("dev/scss/**/*.scss")
-    //#BACKLOG:10 gulp-changed doesn't work atm. Find out why and fix the sass stream. Perhaps ask Zell on css-tricks-article.
-    //.pipe(changed("dev/css", { extension: '.css' }))
     .pipe(sourcemaps.init())
-      .pipe(sass())
+      .pipe(sass().on("error", sass.logError))
       .pipe(autoprefixer({
         browsers: ["last 2 versions"]
       }))
@@ -35,7 +32,7 @@ gulp.task("sass", function() {
     .pipe(gulp.dest("dev/css"))
     .pipe(browserSync.reload({
       stream: true
-    }))
+    }));
 });
 
 //Starting server and syncing browser
@@ -47,7 +44,7 @@ gulp.task("browserSync", function() {
       index: "patternLib.html",
       browser: ["google chrome"]
     }
-  })
+  });
 });
 
 //Concatenating and minifying JS and CSS
@@ -62,7 +59,7 @@ gulp.task('useref', function(){
     .pipe(gulpIf('*.js', uglify()))
     .pipe(assets.restore())
     .pipe(useref())
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('dist'));
 });
 
 //Optimizing Images
@@ -71,13 +68,13 @@ gulp.task("images", function() {
     .pipe(cache(imagemin({
       // --> ImageMin options
     })))
-    .pipe(gulp.dest("dist/img"))
+    .pipe(gulp.dest("dist/img"));
 });
 
 //Copying font files
 gulp.task("fonts", function() {
   return gulp.src("dev/fonts/**/*")
-    .pipe(gulp.dest("dist/fonts"))
+    .pipe(gulp.dest("dist/fonts"));
 });
 
 //Clean dist folder
@@ -89,7 +86,7 @@ gulp.task("clean:all", function(callback) {
 // #BACKLOG:0 Clean Gulp Task works only with del 1.2.1 (Globbing issue). Find a Fix.
 //Clean dist folder EXCEPT images
 gulp.task("clean", function(callback) {
-  del(["dist/**/*", "!dist/img", "!dist/img/**/*"], callback)
+  del(["dist/**/*", "!dist/img", "!dist/img/**/*"], callback);
 });
 
 // Watch for file changes
@@ -109,7 +106,7 @@ gulp.task("watch", ["browserSync", "sass"], function() {
 gulp.task("default", function(callback) {
   runSequence(["sass", "browserSync", "watch"],
     callback
-  )
+  );
 });
 
 
@@ -122,5 +119,5 @@ gulp.task("build", function(callback) {
   runSequence("clean",
     ["sass", "useref", "images", "fonts"],
     callback
-  )
+  );
 });

@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
-
+// #TODO:0 Add images to item list.
+// #TODO:10 Add second column on xlarge.
 
 //=================================================================
 //  ITEMLIST MODULE
@@ -13,50 +14,47 @@
     margin-bottom: .75em;
     padding-left: 5%;
     text-transform: uppercase;
-      @include respond-to("small") {
-        padding-left: 15%;
-      }
-      @include respond-to("medium") {
-        position: absolute;
-        top: 0;
-        left: 15%;
-        padding-left: 0;
-        line-height: .75;
-        transform-origin: 0 0;
-        transform: rotate(90deg);
-      }
-    /*
-      @include respond-to("small") {
-        left: 15%;
-      } */
+
+    @include respond-to("small") {
+      padding-left: 15%;
+    }
+
+    @include respond-to("medium") {
+      position: absolute;
+      top: 0;
+      left: 15%;
+      padding-left: 0;
+      line-height: .75;
+      transform-origin: 0 0;
+      transform: rotate(90deg);
+    }
   }
 }
 
 .itemList__item {
   background: $primaryBG;
-  //padding: .5rem;
 
   &:first-of-type {
-    padding-top: 0rem;
+    padding-top: 0;
   }
 
   &__title {
-    text-transform: capitalize;
     color: $primaryLink;
+    text-transform: capitalize;
   }
 
   &__subtitle {
     margin-bottom: .75em;
-    color: $lightContent;
     font-weight: 500;
+    color: $lightContent;
   }
 }
 
 .itemList__linkFull {
   @extend small;
   padding: .5rem;
-  border-top: 3px solid $primaryContent;
   text-align: right;
+  border-top: 3px solid $primaryContent;
 }
 
 .itemList__tile {
@@ -70,15 +68,15 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: -1;
     width: 100%;
     height: 100%;
-    z-index: -1;
     transition: all .2s ease-in-out;
   }
 
   &:hover {
-    transform: translateX(-5px) translateY(-5px);
     color: $primaryLink;
+    transform: translateX(-5px) translateY(-5px);
     transition: all .2s ease-in-out;
   }
 
@@ -86,9 +84,9 @@
     transform: translateX(5px) translateY(5px);
     transition: all .2s ease-in-out;
   }
-}
 
-.itemList__tile > .itemList__item {
-  padding-right: .5rem;
-  padding-bottom: .5rem;
+  > .itemList__item {
+    padding-right: .5rem;
+    padding-bottom: .5rem;
+  }
 }
