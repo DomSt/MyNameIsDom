@@ -11,20 +11,27 @@
 $path-img: "../img";
 $path-font: "../fonts";
 
+
 //-----------------------------------------------------------------
 // Media Querie Breakpoints
 $breakpoints: (
   "small"   : 500px,
   "medium"  : 640px,
   "large"   : 850px,
-  "xlarge"  : 1100px
-  );
+  "xlarge"  : 1200px
+);
+
 
 //-----------------------------------------------------------------
 // Colors
 $primaryLink: #f25405;
-$primaryContent: #202020;
+$primaryContent: #000;
 $lightContent: #a0a4a3;
 $primaryBG: #fff;
 $darkBG: #6d7170;
 $lightBG: #e6e6e6;
+
+
+//-----------------------------------------------------------------
+// Grid System
+$basePadding: 1rem;

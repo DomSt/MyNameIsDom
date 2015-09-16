@@ -3,54 +3,45 @@
 
 
 //=================================================================
-//  GRID LAYOUT
+//  GRID SYSTEM
 //=================================================================
 
-.l-centerBlock {
-  width: 70%;
-  margin-right: auto;
-  margin-left: auto;
+.frame {
+  margin: 0 5%;
 }
 
-.l-level1 {
-  width: 90%;
-  margin-left: 5%;
-}
-
-.l-level2 {
-  width: 85%;
-  margin-left: 10%;
-
-  @include respond-to("small") {
-    width: 80%;
-    margin-left: 15%;
-  }
-}
-
-.l-level3 {
-  width: 80%;
-  margin-left: 15%;
-
-  @include respond-to("small") {
-    width: 70%;
-    margin-left: 25%;
-  }
-}
-
-.l-chunk {
-  position: relative;
-}
-
-.l-chunk::before {
+.frame:after {
   content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 2.5%;
-  border-top: 6px solid $primaryContent;
+  clear: both;
+  display: table;
+}
 
-  @include respond-to("small") {
-    width: 5%;
-  }
+[class*='bit-'] {
+  float: right;
+  padding: 0 $basePadding;
+}
+
+[class*="--noPad"] {
+  padding: 0;
+}
+
+[class*="--center"] {
+  float: none;
+  margin: 0 auto;
+}
+
+.bit-1  {width: calc(100% / 10 * 1);}
+.bit-2  {width: calc(100% / 10 * 2);}
+.bit-3  {width: calc(100% / 10 * 3);}
+.bit-4  {width: calc(100% / 10 * 4);}
+.bit-5  {width: calc(100% / 10 * 5);}
+.bit-6  {width: calc(100% / 10 * 6);}
+.bit-7  {width: calc(100% / 10 * 7);}
+.bit-8  {width: calc(100% / 10 * 8);}
+.bit-9  {width: calc(100% / 10 * 9);}
+.bit-10 {width: 100%;}
+
+.bit--tile {
+  padding-top: $basePadding;
+  padding-bottom: $basePadding;
 }

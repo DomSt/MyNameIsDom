@@ -11,8 +11,9 @@
   position: relative;
 
   &__name {
-    margin-bottom: .75em;
+    margin-bottom: 3rem;
     padding-left: 5%;
+    line-height: 1em;
     text-transform: uppercase;
 
     @include respond-to("small") {
@@ -32,6 +33,7 @@
 }
 
 .itemList__item {
+  padding: $basePadding;
   background: $primaryBG;
 
   &:first-of-type {
@@ -83,10 +85,5 @@
   &:hover::after {
     transform: translateX(5px) translateY(5px);
     transition: all .2s ease-in-out;
-  }
-
-  > .itemList__item {
-    padding-right: .5rem;
-    padding-bottom: .5rem;
   }
 }

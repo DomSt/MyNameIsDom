@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 90%;
+  width: calc(90% * .8);
   height: 70vh;
   padding: 15%;
   font-weight: 400;
@@ -19,7 +19,7 @@
   background-color: $primaryContent;
 
   @include respond-to("small") {
-    width: 70%;
+    width: calc(90% * .7);
     padding: 10%;
   }
 }
