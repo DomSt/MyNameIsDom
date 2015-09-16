@@ -39,6 +39,8 @@
   color: firebrick;
 }
 
+
+
 //=================================================================
 //  SPECIAL ELEMENTS
 //=================================================================
@@ -47,10 +49,10 @@
 // Layout Element Visualisation
 
 .lib__element--layoutBlock {
-  padding: 2rem;
   color: $primaryBG;
   background-color: darkgrey;
 }
+
 
 //-----------------------------------------------------------------
 // Color Swatches
@@ -93,6 +95,7 @@
     background-color: $lightContent;
   }
 }
+
 
 //-----------------------------------------------------------------
 // Type Elements

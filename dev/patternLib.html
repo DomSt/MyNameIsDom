@@ -20,31 +20,44 @@
 
     <!-- GRID TEST -->
     <div class="gridTest">
-      <span class="gridTest__col"></span><span class="gridTest__col"></span><span class="gridTest__col"></span><span class="gridTest__col"></span><span class="gridTest__col"></span><span class="gridTest__col"></span><span class="gridTest__col"></span><span class="gridTest__col"></span><span class="gridTest__col"></span><span class="gridTest__col"></span>
+      <div class="frame">
+        <span class="bit-1 gridTest__col"></span>
+        <span class="bit-1 gridTest__col"></span>
+        <span class="bit-1 gridTest__col"></span>
+        <span class="bit-1 gridTest__col"></span>
+        <span class="bit-1 gridTest__col"></span>
+        <span class="bit-1 gridTest__col"></span>
+        <span class="bit-1 gridTest__col"></span>
+        <span class="bit-1 gridTest__col"></span>
+        <span class="bit-1 gridTest__col"></span>
+        <span class="bit-1 gridTest__col"></span>
+      </div>
     </div>
 
     <!-- LAYOUT CLASSES -->
     <div class="lib__section">
       <p class="lib__section__headline">Layout & Positioning</p>
 
-      <div class="lib__element lib__element--layoutBlock l-centerBlock">
-        <p>This is a <span class="lib__element__name">l-centerBlock</span> element</p>
-      </div>
+      <div class="frame">
+        <div class="lib__element lib__element--layoutBlock bit-8 bit-8--center bit--tile">
+          <p>This is a <span class="lib__element__name">bit-8</span> element with a <span class="lib__element__name">--center</span> and a <span class="lib__element__name">--tile</span> modifier.</p>
+        </div>
 
-      <div class="lib__element lib__element--layoutBlock l-level1">
-        <p>This is a <span class="lib__element__name">l-level1</span> element</p>
-      </div>
+        <div class="lib__element lib__element--layoutBlock bit-10 bit--tile">
+          <p>This is a <span class="lib__element__name">bit-10</span> element</p>
+        </div>
 
-      <div class="lib__element lib__element--layoutBlock l-level2">
-        <p>This is a <span class="lib__element__name">l-level2</span> element</p>
-      </div>
+        <div class="lib__element lib__element--layoutBlock bit-8 bit--tile">
+          <p>This is a <span class="lib__element__name">bit-8</span> element</p>
+        </div>
 
-      <div class="lib__element lib__element--layoutBlock l-level3">
-        <p>This is a <span class="lib__element__name">l-level3</span> element</p>
-      </div>
+        <div class="lib__element lib__element--layoutBlock bit-7 bit--tile">
+          <p>This is a <span class="lib__element__name">bit-7</span> element</p>
+        </div>
 
-      <div class="lib__element l-chunk">
-        <p class="l-centerBlock">This is a <span class="lib__element__name">l-chunk</span> element that creates the bold line on the left edge. Use it to declare large stand-alone content blocks like &lt;section&gt;.</p>
+        <div class="lib__element bit-10 u-chunk">
+          <p class="l-centerBlock">This is a <span class="lib__element__name">l-chunk</span> element that creates the bold line on the left edge. Use it to declare large stand-alone content blocks like &lt;section&gt;.</p>
+        </div>
       </div>
 
     </div>
@@ -58,25 +71,31 @@
     <!-- TYPOGRAPHIE -->
     <div class="lib__section lib__section--type">
       <p class="lib__section__headline">Typographie</p>
-      <h1 class="lib__element lib__element--type l-level1">This is a <span class="lib__element__name">h1</span> headline</h1>
-      <h2 class="lib__element lib__element--type l-level2">This is a <span class="lib__element__name">h2</span> headline</h2>
-      <h3 class="lib__element lib__element--type l-level3">This is a <span class="lib__element__name">h3</span> headline</h3>
-      <div class="lib__element lib__element--type article__passage l-level3">
-        <p class="article__paragraph">
-          These are two <span class="lib__element__name">article__paragraph</span> elements inside an <span class="lib__element__name">article__passage</span>. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
-        </p>
-        <p class="article__paragraph">
-          The second paragraph without the dropcap.Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum. Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. Gratuitous octopus niacin, sodium glutimate. Quote meon an estimate et non interruptus stadium. Sic tempus fugit esperanto hiccup estrogen. Glorious baklava ex librus hup hey ad infinitum. Non sequitur condominium facile et geranium incognito. Epsum factorial non deposit quid pro quo hic escorol.
-        </p>
+
+      <div class="frame">
+        <h1 class="lib__element lib__element--type bit-10">This is a <span class="lib__element__name">h1</span> headline</h1>
+        <h2 class="lib__element lib__element--type bit-8">This is a <span class="lib__element__name">h2</span> headline</h2>
+        <h3 class="lib__element lib__element--type bit-7">This is a <span class="lib__element__name">h3</span> headline</h3>
+        <div class="lib__element lib__element--type article__passage bit-7">
+          <p class="article__paragraph">
+            These are two <span class="lib__element__name">article__paragraph</span> elements inside an <span class="lib__element__name">article__passage</span>. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
+          </p>
+          <p class="article__paragraph">
+            The second paragraph without the dropcap.Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum. Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. Gratuitous octopus niacin, sodium glutimate. Quote meon an estimate et non interruptus stadium. Sic tempus fugit esperanto hiccup estrogen. Glorious baklava ex librus hup hey ad infinitum. Non sequitur condominium facile et geranium incognito. Epsum factorial non deposit quid pro quo hic escorol.
+          </p>
+        </div>
+        <p class="lib__element lib__element--type bit-7"><small>This is a <span class="lib__element__name">small</span> element used for smallprint. <span class="lib__element__name">figcaption</span> elements work also.</small></p>
+        <blockquote class="lib__element lib__element--type bit-7">This is a <span class="lib__element__name">blockquote</span> element</blockquote>
       </div>
-      <p class="lib__element lib__element--type l-level3"><small>This is a <span class="lib__element__name">small</span> element used for smallprint. <span class="lib__element__name">figcaption</span> elements work also.</small></p>
-      <blockquote class="lib__element lib__element--type l-level3">This is a <span class="lib__element__name">blockquote</span> element</blockquote>
+
     </div>
 
     <!-- LINKS & BUTTONS -->
     <div class="lib__section">
       <p class="lib__section__headline">Links & Buttons</p>
-      <p class="lib__element--type l-level3">This is a <a href="#">Textlink</a> inside some other text.</p>
+      <div class="frame">
+        <p class="lib__element--type bit-10">This is a <a href="#">Textlink</a> inside some other text.</p>
+      </div>
     </div>
 
     <!-- MODULES -->
@@ -84,52 +103,54 @@
       <p class="lib__section__headline">Modules</p>
 
       <!-- itemList Module -->
-      <div class=" lib__element__module l-chunk itemList">
-        <h1 class="itemList__name">itemList Module</h1>
+      <div class="frame">
+        <div class=" lib__element__module u-chunk itemList">
+          <h1 class="itemList__name">itemList Module</h1>
 
-        <div class="l-level3 itemList__tile">
-          <div class="itemList__item">
-            <h2 class="itemList__item__title">This is a itemList__item</h2>
-            <p class="itemList__item__subtitle">
-              This is the item subtitle
-            </p>
-            <p>
-               Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-            </p>
-            <a href="#" class="u-blockLink">Read more</a>
+          <div class="bit-7 bit-7--noPad itemList__tile">
+            <div class="itemList__item">
+              <h2 class="itemList__item__title">This is a itemList__item</h2>
+              <p class="itemList__item__subtitle">
+                This is the item subtitle
+              </p>
+              <p>
+                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+              </p>
+              <a href="#" class="u-blockLink">Read more</a>
+            </div>
           </div>
-        </div>
 
-        <div class="l-level3 itemList__tile">
-          <div class="itemList__item">
-            <h2 class="itemList__item__title">Item title for main content</h2>
-            <p class="itemList__item__subtitle">
-              This is the item subtitle
-            </p>
-            <p>
-               Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-            </p>
-            <a href="#" class="u-blockLink">Read more</a>
+          <div class="bit-7 bit-7--noPad itemList__tile">
+            <div class="itemList__item">
+              <h2 class="itemList__item__title">Item title for main content</h2>
+              <p class="itemList__item__subtitle">
+                This is the item subtitle
+              </p>
+              <p>
+                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+              </p>
+              <a href="#" class="u-blockLink">Read more</a>
+            </div>
           </div>
-        </div>
 
-        <div class="l-level3 itemList__tile">
-          <div class="itemList__item">
-            <h3 class="itemList__item__title">Small item title for secondary content</h3>
-            <p class="itemList__item__subtitle">
-              This is the item subtitle
-            </p>
-            <p>
-               Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-            </p>
-            <a href="#" class="u-blockLink">Read more</a>
+          <div class="bit-7 bit-7--noPad itemList__tile">
+            <div class="itemList__item">
+              <h3 class="itemList__item__title">Small item title for secondary content</h3>
+              <p class="itemList__item__subtitle">
+                This is the item subtitle
+              </p>
+              <p>
+                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+              </p>
+              <a href="#" class="u-blockLink">Read more</a>
+            </div>
           </div>
-        </div>
 
-        <div class="l-level3 itemList__linkFull">
-          <a href="#"><p>Full Itemlist</p></a>
-        </div>
+          <div class="bit-7 itemList__linkFull">
+            <a href="#"><p>Full Itemlist</p></a>
+          </div>
 
+        </div>
       </div>
       <!-- END itemList Module -->
 

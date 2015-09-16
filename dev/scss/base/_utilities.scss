@@ -34,3 +34,21 @@
   white-space: nowrap;
   opacity: 0;
 }
+
+
+//-----------------------------------------------------------------
+// Visual Section Marker
+
+.u-chunk {
+  position: relative;
+}
+
+.u-chunk::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: calc(-5% * 1.11111);
+  display: block;
+  width: 5%;
+  border-top: 6px solid $primaryContent;
+}

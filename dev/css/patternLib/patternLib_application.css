@@ -1,29 +1,25 @@
-* {
-  box-sizing: border-box; }
-
 body {
   font-family: "Hack", monospace;
-  background-color: #e6e6e6;
-  color: #202020; }
+  color: #000;
+  background-color: #e6e6e6; }
 
 .gridTest {
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
+  /* display: none */
   z-index: 100;
-  pointer-events: none;
-  /*display: none;*/ }
+  width: 100%;
+  pointer-events: none; }
 
 .gridTest__col {
-  position: relative;
-  display: inline-block;
-  width: 10%;
-  height: 99.999vh;
-  border: 1px solid rgba(242, 84, 5, 0.2); }
-
-.gridTest__col:first-child {
-  margin-left: 5%; }
+  height: 100vh;
+  border: 1px solid rgba(255, 0, 255, 0.1); }
+  .gridTest__col:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 165, 0, 0.1); }
 
 .lib__section {
   margin-top: 2rem;
@@ -35,11 +31,11 @@ body {
 
 .lib__section__headline {
   margin-bottom: 2rem;
-  font-weight: bold;
   font-size: 1.2rem;
-  text-transform: uppercase;
-  text-align: center;
+  font-weight: bold;
   color: #a0a4a3;
+  text-align: center;
+  text-transform: uppercase;
   border-bottom: 1px solid #e6e6e6; }
 
 .lib__element {
@@ -52,31 +48,30 @@ body {
   color: firebrick; }
 
 .lib__element--layoutBlock {
-  padding: 2rem;
-  background-color: darkgrey;
-  color: white; }
+  color: #fff;
+  background-color: darkgrey; }
 
 .lib__element--colorSwatch {
   display: inline-block;
-  margin-left: 10%;
-  padding: .5rem;
   width: 20%;
   height: 150px;
+  margin-left: 10%;
+  padding: .5rem;
   font-family: monospace;
   font-weight: bold;
   border: 10px solid rgba(255, 255, 255, 0.4);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); }
   .lib__element--colorSwatch--primaryLink {
-    background-color: #f25405;
-    color: #fff; }
+    color: #fff;
+    background-color: #f25405; }
   .lib__element--colorSwatch--primaryContent {
-    background-color: #202020;
-    color: #fff; }
+    color: #fff;
+    background-color: #000; }
   .lib__element--colorSwatch--primaryBG {
     background-color: #fff; }
   .lib__element--colorSwatch--darkBG {
-    background-color: #6d7170;
-    color: #fff; }
+    color: #fff;
+    background-color: #6d7170; }
   .lib__element--colorSwatch--lightBG {
     background-color: #e6e6e6; }
   .lib__element--colorSwatch--lightContent {
@@ -85,6 +80,6 @@ body {
 .lib__element--type,
 .lib__element__module {
   font-family: "NeueHaas", sans-serif;
-  color: #202020; }
+  color: #000; }
 
 /*# sourceMappingURL=../patternLib/patternLib_application.css.map */
