@@ -7,19 +7,23 @@
 //=================================================================
 
 .fullScreenBlock {
-  @extend blockquote;
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: calc(90% * .8);
-  height: 70vh;
+  height: 60vh;
   padding: 15%;
   font-weight: 400;
   color: $primaryBG;
   background-color: $primaryContent;
 
-  @include respond-to("small") {
-    width: calc(90% * .7);
+  @include respond-to("medium") {
+    font-size: 1.5rem;
+    line-height: 1.45833;
+  }
+
+  @include respond-to("large") {
+    width: calc(90% * .6);
     padding: 10%;
   }
 }

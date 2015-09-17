@@ -32,6 +32,11 @@ blockquote {
   font-weight: 900;
 }
 
+h3,
+h4 {
+  font-weight: 500;
+}
+
 h1 {
   font-size: 2rem;
   line-height: 1.25;
@@ -63,7 +68,6 @@ h2 {
 
 h3 {
   font-size: 1.375rem;
-  font-weight: 500;
   line-height: 1.13636364;
 
   @include respond-to("medium") {
@@ -73,6 +77,15 @@ h3 {
 
   @include respond-to("large") {
     font-size: 1.75rem;
+  }
+}
+
+h4 {
+  font-size: 1.125rem;
+  line-height: 1.111;
+
+  @include respond-to("medium") {
+    line-height: 1.222;
   }
 }
 
@@ -96,9 +109,4 @@ a {
   font-weight: 500;
   color: $primaryLink;
   text-decoration: none;
-
-  &:hover {
-    transform: translateY(-1px) translateX(-1px);
-  }
-
 }

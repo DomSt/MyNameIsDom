@@ -11,53 +11,11 @@
   position: relative;
 
   &__name {
-    margin-bottom: 3rem;
-    padding-left: 5%;
+    margin-bottom: 6rem;
     line-height: 1em;
-    text-transform: uppercase;
-
-    @include respond-to("small") {
-      padding-left: 15%;
-    }
-
-    @include respond-to("medium") {
-      position: absolute;
-      top: 0;
-      left: 15%;
-      padding-left: 0;
-      line-height: .75;
-      transform-origin: 0 0;
-      transform: rotate(90deg);
-    }
   }
 }
 
-.itemList__item {
-  padding: $basePadding;
-  background: $primaryBG;
-
-  &:first-of-type {
-    padding-top: 0;
-  }
-
-  &__title {
-    color: $primaryLink;
-    text-transform: capitalize;
-  }
-
-  &__subtitle {
-    margin-bottom: .75em;
-    font-weight: 500;
-    color: $lightContent;
-  }
-}
-
-.itemList__linkFull {
-  @extend small;
-  padding: .5rem;
-  text-align: right;
-  border-top: 3px solid $primaryContent;
-}
 
 .itemList__tile {
   position: relative;
@@ -78,12 +36,41 @@
 
   &:hover {
     color: $primaryLink;
-    transform: translateX(-5px) translateY(-5px);
+    box-shadow: 5px 5px 5px rgba(#000, .025);
+    transform: translateX(-10px) translateY(-10px);
     transition: all .2s ease-in-out;
   }
 
   &:hover::after {
-    transform: translateX(5px) translateY(5px);
+    transform: translateX(10px) translateY(10px);
     transition: all .2s ease-in-out;
   }
+}
+
+
+.itemList__item {
+  padding: $basePadding * .6;
+  background: $primaryBG;
+  
+  @include respond-to("medium") {
+    padding: $basePadding;
+  };
+
+  &__title {
+    color: $primaryLink;
+    text-transform: capitalize;
+  }
+
+  &__subtitle {
+    margin-bottom: .75em;
+    font-weight: 500;
+    color: $lightContent;
+  }
+}
+
+.itemList__linkFull {
+  @extend small;
+  padding: .5rem;
+  text-align: right;
+  border-top: 3px solid $primaryContent;
 }

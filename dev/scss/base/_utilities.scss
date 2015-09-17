@@ -46,9 +46,8 @@
 .u-chunk::before {
   content: "";
   position: absolute;
-  top: 6px;
   left: calc(-5% * 1.11111);
   display: block;
-  width: 5%;
+  width: calc(5% * 1.11111);
   border-top: 6px solid $primaryContent;
 }

@@ -6,7 +6,7 @@ body {
 .gridTest {
   position: fixed;
   top: 0;
-  /* display: none */
+  /* display: none; */
   z-index: 100;
   width: 100%;
   pointer-events: none; }
@@ -20,6 +20,12 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(255, 165, 0, 0.1); }
+
+@media screen and (max-width: 500px) {
+  .gridTest__col:nth-child(2) {
+    width: 10%; }
+  .gridTest__col:nth-child(1n + 3) {
+    display: none; } }
 
 .lib__section {
   margin-top: 2rem;
