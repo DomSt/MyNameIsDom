@@ -7,6 +7,7 @@
 //=================================================================
 
 // scss-lint:disable BemDepth
+// scss-lint:disable ColorVariable
 // scss-lint:disable ColorKeyword
 
 .lib__section {
@@ -14,29 +15,38 @@
   margin-bottom: 2rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  font-family: "Hack", monospace;
   background-color: $primaryBG;
   box-shadow: 0 0 5px rgba(0, 0, 0, .2);
-}
 
-.lib__section__headline {
-  margin-bottom: 2rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: $lightContent;
-  text-align: center;
-  text-transform: uppercase;
-  border-bottom: 1px solid $lightBG;
+  &__headline {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: $lightContent;
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 1px solid $lightBG;
+  }
 }
 
 .lib__element {
   margin-top: 1rem;
   margin-bottom: 2rem;
-}
 
-.lib__element__name {
-  font-family: "Hack", monospace;
-  font-weight: bold;
-  color: firebrick;
+  &__name {
+    font-weight: bold;
+    color: firebrick;
+  }
+
+  &__desc {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 2em;
+    padding: 0 5%;
+    color: $lightContent;
+    text-align: center;
+  }
 }
 
 
@@ -57,11 +67,19 @@
 //-----------------------------------------------------------------
 // Color Swatches
 
+.lib__section--swatches {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
 .lib__element--colorSwatch {
-  display: inline-block;
-  width: 20%;
+  flex-grow: 1;
+  width: 200px;
   height: 150px;
-  margin-left: 10%;
+  margin: 1rem;
   padding: .5rem;
   font-family: monospace;
   font-weight: bold;

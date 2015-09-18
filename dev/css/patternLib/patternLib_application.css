@@ -32,36 +32,56 @@ body {
   margin-bottom: 2rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  font-family: "Hack", monospace;
   background-color: #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); }
-
-.lib__section__headline {
-  margin-bottom: 2rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #a0a4a3;
-  text-align: center;
-  text-transform: uppercase;
-  border-bottom: 1px solid #e6e6e6; }
+  .lib__section__headline {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #a0a4a3;
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e6e6e6; }
 
 .lib__element {
   margin-top: 1rem;
   margin-bottom: 2rem; }
-
-.lib__element__name {
-  font-family: "Hack", monospace;
-  font-weight: bold;
-  color: firebrick; }
+  .lib__element__name {
+    font-weight: bold;
+    color: firebrick; }
+  .lib__element__desc {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 2em;
+    padding: 0 5%;
+    color: #a0a4a3;
+    text-align: center; }
 
 .lib__element--layoutBlock {
   color: #fff;
   background-color: darkgrey; }
 
+.lib__section--swatches {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  padding-right: 5%;
+  padding-left: 5%; }
+
 .lib__element--colorSwatch {
-  display: inline-block;
-  width: 20%;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 200px;
   height: 150px;
-  margin-left: 10%;
+  margin: 1rem;
   padding: .5rem;
   font-family: monospace;
   font-weight: bold;

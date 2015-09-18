@@ -51,7 +51,7 @@
 .itemList__item {
   padding: $basePadding * .6;
   background: $primaryBG;
-  
+
   @include respond-to("medium") {
     padding: $basePadding;
   };
@@ -69,7 +69,6 @@
 }
 
 .itemList__linkFull {
-  @extend small;
   padding: .5rem;
   text-align: right;
   border-top: 3px solid $primaryContent;
