@@ -15,10 +15,10 @@ $path-font: "../fonts";
 //-----------------------------------------------------------------
 // Media Querie Breakpoints
 $breakpoints: (
-  "small"   : 500px,
-  "medium"  : 640px,
-  "large"   : 850px,
-  "xlarge"  : 1200px
+  "small"   : 30em,
+  "medium"  : 40em,
+  "large"   : 56em,
+  "xlarge"  : 75em
 );
 
 
@@ -30,8 +30,3 @@ $lightContent: #a0a4a3;
 $primaryBG: #fff;
 $darkBG: #6d7170;
 $lightBG: #e6e6e6;
-
-
-//-----------------------------------------------------------------
-// Grid System
-$basePadding: 1rem;

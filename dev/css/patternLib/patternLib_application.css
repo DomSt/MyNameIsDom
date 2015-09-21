@@ -21,25 +21,31 @@ body {
     height: 100%;
     background: rgba(255, 165, 0, 0.1); }
 
-@media screen and (max-width: 500px) {
-  .gridTest__col:nth-child(2) {
-    width: 10%; }
-  .gridTest__col:nth-child(1n + 3) {
-    display: none; } }
+[class*="col"][class*="--visSmall"],
+[class*="col"][class*="--visMedium"],
+[class*="col"][class*="--visLarge"] {
+  display: none; }
+
+@media screen and (min-width: 30em) {
+  [class*="col"][class*="--visSmall"] {
+    display: inherit; } }
+
+@media screen and (min-width: 56em) {
+  [class*="col"][class*="--visLarge"] {
+    display: inherit; } }
 
 .lib__section {
   margin-top: 2rem;
   margin-bottom: 2rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  font-family: "Hack", monospace;
+  color: #a0a4a3;
   background-color: #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); }
   .lib__section__headline {
     margin-bottom: 2rem;
     font-size: 1.2rem;
     font-weight: bold;
-    color: #a0a4a3;
     text-align: center;
     text-transform: uppercase;
     border-bottom: 1px solid #e6e6e6; }
@@ -55,7 +61,6 @@ body {
     width: 100%;
     margin-bottom: 2em;
     padding: 0 5%;
-    color: #a0a4a3;
     text-align: center; }
 
 .lib__element--layoutBlock {

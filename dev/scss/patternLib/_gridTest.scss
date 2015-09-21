@@ -29,13 +29,22 @@
   }
 }
 
-// Shows correct grid on small screens
-@media screen and (max-width: 500px) {
-  .gridTest__col:nth-child(2) {
-    width: 10%;
+[class*="col"] {
+  &[class*="--visSmall"],
+  &[class*="--visMedium"],
+  &[class*="--visLarge"] {
+    display: none;
   }
 
-  .gridTest__col:nth-child(1n + 3) {
-    display: none;
+  @include respond-to("small") {
+    &[class*="--visSmall"] {
+      display: inherit;
+    }
+  }
+
+  @include respond-to("large") {
+    &[class*="--visLarge"] {
+      display: inherit;
+    }
   }
 }

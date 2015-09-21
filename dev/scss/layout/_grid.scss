@@ -1,76 +1,259 @@
 @charset "UTF-8";
 
 
+//-----------------------------------------------------------------
+// Variables
+$basePadding: 2rem;
+$baseMargin: 1rem;
+
+$colCount-xs: 6;
+$colCount-sm: 9;
+$colCount-md: 12;
+$colCount-lg: 12;
+
+
 
 //=================================================================
 //  GRID SYSTEM
 //=================================================================
 
-.frame {
-  margin: 0 5%;
+//-----------------------------------------------------------------
+// Frame Element
+.frame--fluid {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $basePadding;
+  padding-left: $basePadding;
 }
 
-.frame:after {
-  content: "";
-  clear: both;
-  display: table;
+
+//-----------------------------------------------------------------
+// Row Element
+.row {
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: -1 * $baseMargin;
+  margin-left: -1 * $baseMargin;
 }
 
-[class*='bit-'] {
-  float: right;
-  padding: 0 ($basePadding * .5);
 
-  @include respond-to("medium") {
-    padding: 0 $basePadding;
-  };
+//-----------------------------------------------------------------
+// General Row Element Modifier
+[class*="row"] {
+  // Sorting
+  &[class*="--reverse"] {
+    flex-direction: row-reverse;
+  }
+
+  // Positioning
+  &[class*="--start"] {
+    justify-content: flex-start;
+  }
+
+  &[class*="--center"] {
+    justify-content: center;
+  }
+
+  &[class*="--end"] {
+    justify-content: flex-end;
+  }
+
+  &[class*="--top"] {
+    align-items: flex-start;
+  }
+
+  &[class*="--middle"] {
+    align-items: center;
+  }
+
+  &[class*="--bottom"] {
+    align-items: flex-end;
+  }
+
+  // Distribution
+  &[class*="--around"] {
+    justify-content: space-around;
+  }
+
+  &[class*="--between"] {
+    justify-content: space-between;
+  }
+}
+
+
+//-----------------------------------------------------------------
+// XS Column Generator
+.col-xs,
+.col-xs-1,
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6 {
+  flex: 0 0 auto;
+  padding-right: $baseMargin / 2;
+  padding-left: $baseMargin / 2;
+}
+
+.col-xs {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+.col-xs--offset-0 {
+  margin-left: 0;
+}
+
+@for $i from 1 through $colCount-xs {
+  .col-xs-#{$i} {
+    flex-basis: (100% / $colCount-xs) * $i;
+    max-width: (100% / $colCount-xs) * $i;
+  }
+
+  .col-xs--offset-#{$i} {
+    margin-left: (100% / $colCount-xs) * $i;
+  }
+}
+
+
+//-----------------------------------------------------------------
+// SM Column Generator
+@include respond-to("small") {
+  .col-sm,
+  .col-sm-1,
+  .col-sm-2,
+  .col-sm-3,
+  .col-sm-4,
+  .col-sm-5,
+  .col-sm-6,
+  .col-sm-7,
+  .col-sm-8,
+  .col-sm-9 {
+    flex: 0 0 auto;
+    padding-right: $baseMargin;
+    padding-left: $baseMargin;
+  }
+
+  .col-sm {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  }
+
+  @for $i from 1 through $colCount-sm {
+    .col-sm-#{$i} {
+      flex-basis: (100% / $colCount-sm) * $i;
+      max-width: (100% / $colCount-sm) * $i;
+    }
+
+    .col-sm--offset-#{$i} {
+      margin-left: (100% / $colCount-sm) * $i;
+    }
+  }
+}
+
+
+//-----------------------------------------------------------------
+// MD Column Generator
+@include respond-to("medium") {
+  .col-md,
+  .col-md-1,
+  .col-md-2,
+  .col-md-3,
+  .col-md-4,
+  .col-md-5,
+  .col-md-6,
+  .col-md-7,
+  .col-md-8,
+  .col-md-9,
+  .col-md-10,
+  .col-md-11,
+  .col-md-12 {
+    flex: 0 0 auto;
+    padding-right: $baseMargin;
+    padding-left: $baseMargin;
+  }
+
+  .col-md {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  }
+
+  @for $i from 1 through $colCount-md {
+    .col-md-#{$i} {
+      flex-basis: (100% / $colCount-md) * $i;
+      max-width: (100% / $colCount-md) * $i;
+    }
+
+    .col-md--offset-#{$i} {
+      margin-left: (100% / $colCount-md) * $i;
+    }
+  }
+}
+
+
+//-----------------------------------------------------------------
+// LG Column Generator
+@include respond-to("large") {
+  .col-lg,
+  .col-lg-1,
+  .col-lg-2,
+  .col-lg-3,
+  .col-lg-4,
+  .col-lg-5,
+  .col-lg-6,
+  .col-lg-7,
+  .col-lg-8,
+  .col-lg-9,
+  .col-lg-10,
+  .col-lg-11,
+  .col-lg-12 {
+    flex: 0 0 auto;
+    padding-right: $baseMargin;
+    padding-left: $baseMargin;
+  }
+
+  .col-lg {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  }
+
+  @for $i from 1 through $colCount-lg {
+    .col-lg-#{$i} {
+      flex-basis: (100% / $colCount-lg) * $i;
+      max-width: (100% / $colCount-lg) * $i;
+    }
+
+    .col-lg--offset-#{$i} {
+      margin-left: (100% / $colCount-lg) * $i;
+    }
+  }
+}
+
+
+//-----------------------------------------------------------------
+// General Column Element Modifier
+
+[class*="col"] {
+  // Sorting
+  &[class*="--reverse"] {
+    flex-direction: column-reverse;
+  }
+
+  &[class*="--first"] {
+    order: -1;
+  }
+
+  &[class*="--last"] {
+    order: 1;
+  }
 
   &[class*="--noPad"] {
     padding: 0;
   }
-
-  &[class*="--center"] {
-    float: none;
-    display: block;
-    margin: 0 auto;
-  }
-
-  &[class*="--tile"] {
-    padding-top: ($basePadding * .5);
-    padding-bottom: ($basePadding * .5);
-
-    @include respond-to("medium") {
-      padding-top: $basePadding;
-      padding-bottom: $basePadding;
-    };
-  }
 }
-
-// Collapsed columns for small screens
-.bit-1,
-.bit-2,
-.bit-3,
-.bit-4,
-.bit-5,
-.bit-6,
-.bit-7,
-.bit-8 {
-  width: calc(100% / 10 * 9);
-}
-
-.bit-9,
-.bit-10 {
-  width: 100%;
-}
-
-@include respond-to("small") {
-  .bit-1  {width: calc(100% / 10 * 1);}
-  .bit-2  {width: calc(100% / 10 * 2);}
-  .bit-3  {width: calc(100% / 10 * 3);}
-  .bit-4  {width: calc(100% / 10 * 4);}
-  .bit-5  {width: calc(100% / 10 * 5);}
-  .bit-6  {width: calc(100% / 10 * 6);}
-  .bit-7  {width: calc(100% / 10 * 7);}
-  .bit-8  {width: calc(100% / 10 * 8);}
-  .bit-9  {width: calc(100% / 10 * 9);}
-  .bit-10 {width: 100%;}
-};
