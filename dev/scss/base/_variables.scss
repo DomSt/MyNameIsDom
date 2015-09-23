@@ -13,13 +13,24 @@ $path-font: "../fonts";
 
 
 //-----------------------------------------------------------------
-// Media Querie Breakpoints
+// Media Querie Breakpoints   480px | 640px | 896px | 1200px
 $breakpoints: (
   "small"   : 30em,
   "medium"  : 40em,
   "large"   : 56em,
   "xlarge"  : 75em
 );
+
+
+//-----------------------------------------------------------------
+// Grid System
+$basePadding: 2rem;
+$baseMargin: 1rem;
+
+$cellCount: 12;
+$cellCount-sm: 12;
+$cellCount-md: 12;
+$cellCount-lg: 12;
 
 
 //-----------------------------------------------------------------
@@ -30,3 +41,4 @@ $lightContent: #a0a4a3;
 $primaryBG: #fff;
 $darkBG: #6d7170;
 $lightBG: #e6e6e6;
+$libColor: #e74c3c;

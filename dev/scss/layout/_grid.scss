@@ -1,18 +1,6 @@
 @charset "UTF-8";
 
 
-//-----------------------------------------------------------------
-// Variables
-$basePadding: 2rem;
-$baseMargin: 1rem;
-
-$colCount-xs: 6;
-$colCount-sm: 9;
-$colCount-md: 12;
-$colCount-lg: 12;
-
-
-
 //=================================================================
 //  GRID SYSTEM
 //=================================================================
@@ -24,12 +12,17 @@ $colCount-lg: 12;
   margin-left: auto;
   padding-right: $basePadding;
   padding-left: $basePadding;
+
+  @include respond-to("small") {
+    padding-right: $basePadding;
+    padding-left: $basePadding;
+  }
 }
 
 
 //-----------------------------------------------------------------
-// Row Element
-.row {
+// group Element
+.group {
   display: flex;
   flex: 0 1 auto;
   flex-direction: row;
@@ -40,8 +33,8 @@ $colCount-lg: 12;
 
 
 //-----------------------------------------------------------------
-// General Row Element Modifier
-[class*="row"] {
+// General group Element Modifier
+[class*="group"] {
   // Sorting
   &[class*="--reverse"] {
     flex-direction: row-reverse;
@@ -84,162 +77,183 @@ $colCount-lg: 12;
 
 
 //-----------------------------------------------------------------
-// XS Column Generator
-.col-xs,
-.col-xs-1,
-.col-xs-2,
-.col-xs-3,
-.col-xs-4,
-.col-xs-5,
-.col-xs-6 {
+// Base cellumn Generator
+.cell,
+.cell-1,
+.cell-2,
+.cell-3,
+.cell-4,
+.cell-5,
+.cell-6,
+.cell-7,
+.cell-8,
+.cell-9,
+.cell-10,
+.cell-11,
+.cell-12 {
   flex: 0 0 auto;
-  padding-right: $baseMargin / 2;
-  padding-left: $baseMargin / 2;
+  padding-right: $baseMargin;
+  padding-left: $baseMargin;
 }
 
-.col-xs {
+.cell {
   flex-basis: 0;
   flex-grow: 1;
   max-width: 100%;
 }
 
-.col-xs--offset-0 {
+.cell--offset-0 {
   margin-left: 0;
 }
 
-@for $i from 1 through $colCount-xs {
-  .col-xs-#{$i} {
-    flex-basis: (100% / $colCount-xs) * $i;
-    max-width: (100% / $colCount-xs) * $i;
+@for $i from 1 through $cellCount {
+  .cell-#{$i} {
+    flex-basis: (100% / $cellCount) * $i;
+    max-width: (100% / $cellCount) * $i;
   }
 
-  .col-xs--offset-#{$i} {
-    margin-left: (100% / $colCount-xs) * $i;
+  .cell--offset-#{$i} {
+    margin-left: (100% / $cellCount) * $i;
   }
 }
 
 
 //-----------------------------------------------------------------
-// SM Column Generator
+// SM cellumn Generator
 @include respond-to("small") {
-  .col-sm,
-  .col-sm-1,
-  .col-sm-2,
-  .col-sm-3,
-  .col-sm-4,
-  .col-sm-5,
-  .col-sm-6,
-  .col-sm-7,
-  .col-sm-8,
-  .col-sm-9 {
+  .cell-sm,
+  .cell-sm-1,
+  .cell-sm-2,
+  .cell-sm-3,
+  .cell-sm-4,
+  .cell-sm-5,
+  .cell-sm-6,
+  .cell-sm-7,
+  .cell-sm-8,
+  .cell-sm-9,
+  .cell-sm-10,
+  .cell-sm-11,
+  .cell-sm-12 {
     flex: 0 0 auto;
     padding-right: $baseMargin;
     padding-left: $baseMargin;
   }
 
-  .col-sm {
+  .cell-sm {
     flex-basis: 0;
     flex-grow: 1;
     max-width: 100%;
   }
 
-  @for $i from 1 through $colCount-sm {
-    .col-sm-#{$i} {
-      flex-basis: (100% / $colCount-sm) * $i;
-      max-width: (100% / $colCount-sm) * $i;
+  .cell-sm--offset-0 {
+    margin-left: 0;
+  }
+
+  @for $i from 1 through $cellCount-sm {
+    .cell-sm-#{$i} {
+      flex-basis: (100% / $cellCount-sm) * $i;
+      max-width: (100% / $cellCount-sm) * $i;
     }
 
-    .col-sm--offset-#{$i} {
-      margin-left: (100% / $colCount-sm) * $i;
+    .cell-sm--offset-#{$i} {
+      margin-left: (100% / $cellCount-sm) * $i;
     }
   }
 }
 
 
 //-----------------------------------------------------------------
-// MD Column Generator
+// MD cellumn Generator
 @include respond-to("medium") {
-  .col-md,
-  .col-md-1,
-  .col-md-2,
-  .col-md-3,
-  .col-md-4,
-  .col-md-5,
-  .col-md-6,
-  .col-md-7,
-  .col-md-8,
-  .col-md-9,
-  .col-md-10,
-  .col-md-11,
-  .col-md-12 {
+  .cell-md,
+  .cell-md-1,
+  .cell-md-2,
+  .cell-md-3,
+  .cell-md-4,
+  .cell-md-5,
+  .cell-md-6,
+  .cell-md-7,
+  .cell-md-8,
+  .cell-md-9,
+  .cell-md-10,
+  .cell-md-11,
+  .cell-md-12 {
     flex: 0 0 auto;
     padding-right: $baseMargin;
     padding-left: $baseMargin;
   }
 
-  .col-md {
+  .cell-md {
     flex-basis: 0;
     flex-grow: 1;
     max-width: 100%;
   }
 
-  @for $i from 1 through $colCount-md {
-    .col-md-#{$i} {
-      flex-basis: (100% / $colCount-md) * $i;
-      max-width: (100% / $colCount-md) * $i;
+  .cell-md--offset-0 {
+    margin-left: 0;
+  }
+
+  @for $i from 1 through $cellCount-md {
+    .cell-md-#{$i} {
+      flex-basis: (100% / $cellCount-md) * $i;
+      max-width: (100% / $cellCount-md) * $i;
     }
 
-    .col-md--offset-#{$i} {
-      margin-left: (100% / $colCount-md) * $i;
+    .cell-md--offset-#{$i} {
+      margin-left: (100% / $cellCount-md) * $i;
     }
   }
 }
 
 
 //-----------------------------------------------------------------
-// LG Column Generator
+// LG cellumn Generator
 @include respond-to("large") {
-  .col-lg,
-  .col-lg-1,
-  .col-lg-2,
-  .col-lg-3,
-  .col-lg-4,
-  .col-lg-5,
-  .col-lg-6,
-  .col-lg-7,
-  .col-lg-8,
-  .col-lg-9,
-  .col-lg-10,
-  .col-lg-11,
-  .col-lg-12 {
+  .cell-lg,
+  .cell-lg-1,
+  .cell-lg-2,
+  .cell-lg-3,
+  .cell-lg-4,
+  .cell-lg-5,
+  .cell-lg-6,
+  .cell-lg-7,
+  .cell-lg-8,
+  .cell-lg-9,
+  .cell-lg-10,
+  .cell-lg-11,
+  .cell-lg-12 {
     flex: 0 0 auto;
     padding-right: $baseMargin;
     padding-left: $baseMargin;
   }
 
-  .col-lg {
+  .cell-lg {
     flex-basis: 0;
     flex-grow: 1;
     max-width: 100%;
   }
 
-  @for $i from 1 through $colCount-lg {
-    .col-lg-#{$i} {
-      flex-basis: (100% / $colCount-lg) * $i;
-      max-width: (100% / $colCount-lg) * $i;
+  .cell-lg--offset-0 {
+    margin-left: 0;
+  }
+
+  @for $i from 1 through $cellCount-lg {
+    .cell-lg-#{$i} {
+      flex-basis: (100% / $cellCount-lg) * $i;
+      max-width: (100% / $cellCount-lg) * $i;
     }
 
-    .col-lg--offset-#{$i} {
-      margin-left: (100% / $colCount-lg) * $i;
+    .cell-lg--offset-#{$i} {
+      margin-left: (100% / $cellCount-lg) * $i;
     }
   }
 }
 
 
 //-----------------------------------------------------------------
-// General Column Element Modifier
+// General cellumn Element Modifier
 
-[class*="col"] {
+[class*="cell"] {
   // Sorting
   &[class*="--reverse"] {
     flex-direction: column-reverse;
@@ -253,7 +267,12 @@ $colCount-lg: 12;
     order: 1;
   }
 
-  &[class*="--noPad"] {
+  &[class*="--collapse"] {
     padding: 0;
+  }
+
+  &[class*="--expand"] {
+    padding-top: $baseMargin;
+    padding-bottom: $baseMargin;
   }
 }

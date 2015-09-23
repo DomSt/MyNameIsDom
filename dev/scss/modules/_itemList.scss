@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
-// #TODO:10 Add images to item list.
-// #TODO:30 Add second column on xlarge.
+// #TODO:30 Add images to item list.
+// #DOING:0 Add second column on xlarge.
 
 //=================================================================
 //  ITEMLIST MODULE
@@ -11,27 +11,40 @@
   position: relative;
 
   &__name {
-    margin-bottom: 6rem;
+    margin-bottom: 3rem;
     line-height: 1em;
+
+    @include respond-to("medium") {
+      margin-bottom: 6rem;
+    }
   }
 }
 
 
 .itemList__tile {
   position: relative;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
   transition: all .2s ease-in-out;
 
+  &::before,
   &::after {
-    @include hatching;
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
     width: 100%;
     height: 100%;
+  }
+
+  &::before {
+    @include hatching;
+    z-index: -2;
     transition: all .2s ease-in-out;
+  }
+
+  &::after {
+    z-index: -1;
+    background: $primaryBG;
   }
 
   &:hover {
@@ -41,20 +54,19 @@
     transition: all .2s ease-in-out;
   }
 
-  &:hover::after {
+  &:hover::before {
     transform: translateX(10px) translateY(10px);
     transition: all .2s ease-in-out;
+  }
+
+  @include respond-to("medium") {
+    margin-bottom: 4rem;
   }
 }
 
 
 .itemList__item {
-  padding: $basePadding * .6;
   background: $primaryBG;
-
-  @include respond-to("medium") {
-    padding: $basePadding;
-  };
 
   &__title {
     color: $primaryLink;

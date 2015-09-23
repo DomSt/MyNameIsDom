@@ -1,50 +1,55 @@
 @charset "UTF-8";
 
-
+// #DONE:0 Restyle PatternLib Elements
 
 //=================================================================
 //  BASE ELEMENTS
 //=================================================================
 
-// scss-lint:disable BemDepth
-// scss-lint:disable ColorVariable
-// scss-lint:disable ColorKeyword
-
-.lib__section {
+.lib-section {
   margin-top: 2rem;
   margin-bottom: 2rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  color: $lightContent;
   background-color: $primaryBG;
-  box-shadow: 0 0 5px rgba(0, 0, 0, .2);
 
-  &__headline {
-    margin-bottom: 2rem;
-    font-size: 1.2rem;
-    font-weight: bold;
+  > h2 {
+    margin-bottom: 4rem;
     text-align: center;
     text-transform: uppercase;
-    border-bottom: 1px solid $lightBG;
+    border-bottom: 2px solid $lightBG;
   }
 }
 
-.lib__element {
-  margin-top: 1rem;
+.lib-subSection {
+  margin-top: 8rem;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.lib-example,
+.lib-description,
+.lib-code {
   margin-bottom: 2rem;
+}
 
-  &__name {
-    font-weight: bold;
-    color: firebrick;
+.lib-description {
+  > h3 {
+    margin-bottom: .25em;
   }
 
-  &__desc {
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 2em;
-    padding: 0 5%;
-    text-align: center;
+  > h4 {
+    margin-bottom: 1em;
   }
+}
+
+pre {
+  font-size: .875rem;
+  color: $primaryBG;
+  background: $primaryContent;
+  overflow: scroll;
 }
 
 
@@ -55,29 +60,38 @@
 
 //-----------------------------------------------------------------
 // Layout Element Visualisation
-
-.lib__element--layoutBlock {
+.lib-block {
+  display: block;
+  min-height: 1rem;
+  padding: 1rem;
   color: $primaryBG;
-  background-color: darkgrey;
+  text-align: center;
+  background-color: $libColor;
+
+  &--high {
+    min-height: 4rem;
+  }
+
+  &--nested {
+    background-color: darken($libColor, 10%);
+  }
+
+}
+
+.lib-block--outer {
+  margin-bottom: .5rem;
+  background-color: lighten($libColor, 30%);
+  border: 1px solid lighten($libColor, 15%);
+  border-top: 0;
+  border-bottom: 0;
 }
 
 
 //-----------------------------------------------------------------
 // Color Swatches
-
-.lib__section--swatches {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding-right: 5%;
-  padding-left: 5%;
-}
-
-.lib__element--colorSwatch {
-  flex-grow: 1;
-  width: 200px;
+.lib-colorSwatch {
   height: 150px;
-  margin: 1rem;
+  margin-bottom: 2rem;
   padding: .5rem;
   font-family: monospace;
   font-weight: bold;
@@ -112,12 +126,15 @@
   }
 }
 
-
 //-----------------------------------------------------------------
-// Type Elements
-
-.lib__element--type,
-.lib__element__module {
-  font-family: "NeueHaas", sans-serif;
-  color: $primaryContent;
+// Type Stylings
+.lib-section--type {
+  h1,
+  h2,
+  h3,
+  h4,
+  blockquote,
+  p {
+    margin-bottom: 1em;
+  }
 }
