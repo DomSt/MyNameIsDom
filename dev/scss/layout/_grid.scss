@@ -251,6 +251,50 @@
 
 
 //-----------------------------------------------------------------
+// XL cellumn Generator
+@include respond-to("large") {
+  .cell-xl,
+  .cell-xl-1,
+  .cell-xl-2,
+  .cell-xl-3,
+  .cell-xl-4,
+  .cell-xl-5,
+  .cell-xl-6,
+  .cell-xl-7,
+  .cell-xl-8,
+  .cell-xl-9,
+  .cell-xl-10,
+  .cell-xl-11,
+  .cell-xl-12 {
+    flex: 0 0 auto;
+    padding-right: $baseMargin;
+    padding-left: $baseMargin;
+  }
+
+  .cell-xl {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  }
+
+  .cell-xl--offset-0 {
+    margin-left: 0;
+  }
+
+  @for $i from 1 through $cellCount-xl {
+    .cell-xl-#{$i} {
+      flex-basis: (100% / $cellCount-xl) * $i;
+      max-width: (100% / $cellCount-xl) * $i;
+    }
+
+    .cell-xl--offset-#{$i} {
+      margin-left: (100% / $cellCount-xl) * $i;
+    }
+  }
+}
+
+
+//-----------------------------------------------------------------
 // General cellumn Element Modifier
 
 [class*="cell"] {
