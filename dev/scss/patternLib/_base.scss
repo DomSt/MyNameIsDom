@@ -1,13 +1,14 @@
 @charset "UTF-8";
 
 
-
 //=================================================================
 //  BASE
 //=================================================================
 
 body {
-  font-family: "Hack", monospace;
-  color: $primaryContent;
   background-color: $lightBG;
+}
+
+code {
+  font-family: "Hack", monospace !important;
 }

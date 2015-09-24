@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 
-
 //=================================================================
 //  UTILITIES
 //=================================================================
@@ -50,4 +49,6 @@
   display: block;
   width: calc(5% * 1.11111);
   border-top: 6px solid $primaryContent;
+
+  // #TODO:0 Fix width and positioning problem on small screens
 }

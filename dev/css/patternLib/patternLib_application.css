@@ -1,91 +1,115 @@
 body {
-  font-family: "Hack", monospace;
-  color: #000;
   background-color: #e6e6e6; }
+
+code {
+  font-family: "Hack", monospace !important; }
 
 .gridTest {
   position: fixed;
   top: 0;
-  /* display: none; */
   z-index: 100;
+  /* display: none; */
   width: 100%;
   pointer-events: none; }
 
-.gridTest__col {
+.gridTest__cell {
   height: 100vh;
   border: 1px solid rgba(255, 0, 255, 0.1); }
-  .gridTest__col:after {
+  .gridTest__cell:after {
     content: "";
     display: block;
     width: 100%;
     height: 100%;
-    background: rgba(255, 165, 0, 0.1); }
+    background: rgba(255, 165, 0, 0.08); }
+  .gridTest__cell--md {
+    display: none; }
+    @media screen and (min-width: 30em) {
+      .gridTest__cell--md {
+        display: inherit; } }
 
-@media screen and (max-width: 500px) {
-  .gridTest__col:nth-child(2) {
-    width: 10%; }
-  .gridTest__col:nth-child(1n + 3) {
-    display: none; } }
-
-.lib__section {
+.lib-section {
   margin-top: 2rem;
   margin-bottom: 2rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color: #fff;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); }
+  background-color: #fff; }
+  .lib-section > h2 {
+    margin-bottom: 4rem;
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 2px solid #e6e6e6; }
 
-.lib__section__headline {
-  margin-bottom: 2rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #a0a4a3;
-  text-align: center;
-  text-transform: uppercase;
-  border-bottom: 1px solid #e6e6e6; }
+.lib-subSection {
+  margin-top: 8rem; }
+  .lib-subSection:first-of-type {
+    margin-top: 0; }
 
-.lib__element {
-  margin-top: 1rem;
+.lib-example,
+.lib-description,
+.lib-code {
   margin-bottom: 2rem; }
 
-.lib__element__name {
-  font-family: "Hack", monospace;
-  font-weight: bold;
-  color: firebrick; }
+.lib-description > h3 {
+  margin-bottom: .25em; }
 
-.lib__element--layoutBlock {
+.lib-description > h4 {
+  margin-bottom: 1em; }
+
+pre {
+  font-size: .875rem;
   color: #fff;
-  background-color: darkgrey; }
+  background: #000;
+  overflow: scroll; }
 
-.lib__element--colorSwatch {
-  display: inline-block;
-  width: 20%;
+.lib-block {
+  display: block;
+  min-height: 1rem;
+  padding: 1rem;
+  color: #fff;
+  text-align: center;
+  background-color: #e74c3c; }
+  .lib-block--high {
+    min-height: 4rem; }
+  .lib-block--nested {
+    background-color: #d62c1a; }
+
+.lib-block--outer {
+  margin-bottom: .5rem;
+  background-color: #f8c9c4;
+  border: 1px solid #ef8b80;
+  border-top: 0;
+  border-bottom: 0; }
+
+.lib-colorSwatch {
   height: 150px;
-  margin-left: 10%;
+  margin-bottom: 2rem;
   padding: .5rem;
   font-family: monospace;
   font-weight: bold;
   border: 10px solid rgba(255, 255, 255, 0.4);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); }
-  .lib__element--colorSwatch--primaryLink {
+  .lib-colorSwatch--primaryLink {
     color: #fff;
     background-color: #f25405; }
-  .lib__element--colorSwatch--primaryContent {
+  .lib-colorSwatch--primaryContent {
     color: #fff;
     background-color: #000; }
-  .lib__element--colorSwatch--primaryBG {
+  .lib-colorSwatch--primaryBG {
     background-color: #fff; }
-  .lib__element--colorSwatch--darkBG {
+  .lib-colorSwatch--darkBG {
     color: #fff;
     background-color: #6d7170; }
-  .lib__element--colorSwatch--lightBG {
+  .lib-colorSwatch--lightBG {
     background-color: #e6e6e6; }
-  .lib__element--colorSwatch--lightContent {
+  .lib-colorSwatch--lightContent {
     background-color: #a0a4a3; }
 
-.lib__element--type,
-.lib__element__module {
-  font-family: "NeueHaas", sans-serif;
-  color: #000; }
+.lib-section--type h1,
+.lib-section--type h2,
+.lib-section--type h3,
+.lib-section--type h4,
+.lib-section--type blockquote,
+.lib-section--type p {
+  margin-bottom: 1em; }
 
 /*# sourceMappingURL=../patternLib/patternLib_application.css.map */

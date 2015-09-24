@@ -1,75 +1,278 @@
 @charset "UTF-8";
 
 
-
 //=================================================================
 //  GRID SYSTEM
 //=================================================================
 
-.frame {
-  margin: 0 5%;
+//-----------------------------------------------------------------
+// Frame Element
+.frame--fluid {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $basePadding;
+  padding-left: $basePadding;
+
+  @include respond-to("small") {
+    padding-right: $basePadding;
+    padding-left: $basePadding;
+  }
 }
 
-.frame:after {
-  content: "";
-  clear: both;
-  display: table;
+
+//-----------------------------------------------------------------
+// group Element
+.group {
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: -1 * $baseMargin;
+  margin-left: -1 * $baseMargin;
 }
 
-[class*='bit-'] {
-  float: right;
-  padding: 0 ($basePadding * .5);
 
-  @include respond-to("medium") {
-    padding: 0 $basePadding;
-  };
+//-----------------------------------------------------------------
+// General group Element Modifier
+[class*="group"] {
+  // Sorting
+  &[class*="--reverse"] {
+    flex-direction: row-reverse;
+  }
 
-  &[class*="--noPad"] {
-    padding: 0;
+  // Positioning
+  &[class*="--start"] {
+    justify-content: flex-start;
   }
 
   &[class*="--center"] {
-    float: none;
-    margin: 0 auto;
+    justify-content: center;
   }
 
-  &[class*="--tile"] {
-    padding-top: ($basePadding * .5);
-    padding-bottom: ($basePadding * .5);
+  &[class*="--end"] {
+    justify-content: flex-end;
+  }
 
-    @include respond-to("medium") {
-      padding-top: $basePadding;
-      padding-bottom: $basePadding;
-    };
+  &[class*="--top"] {
+    align-items: flex-start;
+  }
+
+  &[class*="--middle"] {
+    align-items: center;
+  }
+
+  &[class*="--bottom"] {
+    align-items: flex-end;
+  }
+
+  // Distribution
+  &[class*="--around"] {
+    justify-content: space-around;
+  }
+
+  &[class*="--between"] {
+    justify-content: space-between;
   }
 }
 
-// Collapsed columns for small screens
-.bit-1,
-.bit-2,
-.bit-3,
-.bit-4,
-.bit-5,
-.bit-6,
-.bit-7,
-.bit-8 {
-  width: calc(100% / 10 * 9);
+
+//-----------------------------------------------------------------
+// Base cellumn Generator
+.cell,
+.cell-1,
+.cell-2,
+.cell-3,
+.cell-4,
+.cell-5,
+.cell-6,
+.cell-7,
+.cell-8,
+.cell-9,
+.cell-10,
+.cell-11,
+.cell-12 {
+  flex: 0 0 auto;
+  padding-right: $baseMargin;
+  padding-left: $baseMargin;
 }
 
-.bit-9,
-.bit-10 {
-  width: 100%;
+.cell {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
 }
 
+.cell--offset-0 {
+  margin-left: 0;
+}
+
+@for $i from 1 through $cellCount {
+  .cell-#{$i} {
+    flex-basis: (100% / $cellCount) * $i;
+    max-width: (100% / $cellCount) * $i;
+  }
+
+  .cell--offset-#{$i} {
+    margin-left: (100% / $cellCount) * $i;
+  }
+}
+
+
+//-----------------------------------------------------------------
+// SM cellumn Generator
 @include respond-to("small") {
-  .bit-1  {width: calc(100% / 10 * 1);}
-  .bit-2  {width: calc(100% / 10 * 2);}
-  .bit-3  {width: calc(100% / 10 * 3);}
-  .bit-4  {width: calc(100% / 10 * 4);}
-  .bit-5  {width: calc(100% / 10 * 5);}
-  .bit-6  {width: calc(100% / 10 * 6);}
-  .bit-7  {width: calc(100% / 10 * 7);}
-  .bit-8  {width: calc(100% / 10 * 8);}
-  .bit-9  {width: calc(100% / 10 * 9);}
-  .bit-10 {width: 100%;}
-};
+  .cell-sm,
+  .cell-sm-1,
+  .cell-sm-2,
+  .cell-sm-3,
+  .cell-sm-4,
+  .cell-sm-5,
+  .cell-sm-6,
+  .cell-sm-7,
+  .cell-sm-8,
+  .cell-sm-9,
+  .cell-sm-10,
+  .cell-sm-11,
+  .cell-sm-12 {
+    flex: 0 0 auto;
+    padding-right: $baseMargin;
+    padding-left: $baseMargin;
+  }
+
+  .cell-sm {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  }
+
+  .cell-sm--offset-0 {
+    margin-left: 0;
+  }
+
+  @for $i from 1 through $cellCount-sm {
+    .cell-sm-#{$i} {
+      flex-basis: (100% / $cellCount-sm) * $i;
+      max-width: (100% / $cellCount-sm) * $i;
+    }
+
+    .cell-sm--offset-#{$i} {
+      margin-left: (100% / $cellCount-sm) * $i;
+    }
+  }
+}
+
+
+//-----------------------------------------------------------------
+// MD cellumn Generator
+@include respond-to("medium") {
+  .cell-md,
+  .cell-md-1,
+  .cell-md-2,
+  .cell-md-3,
+  .cell-md-4,
+  .cell-md-5,
+  .cell-md-6,
+  .cell-md-7,
+  .cell-md-8,
+  .cell-md-9,
+  .cell-md-10,
+  .cell-md-11,
+  .cell-md-12 {
+    flex: 0 0 auto;
+    padding-right: $baseMargin;
+    padding-left: $baseMargin;
+  }
+
+  .cell-md {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  }
+
+  .cell-md--offset-0 {
+    margin-left: 0;
+  }
+
+  @for $i from 1 through $cellCount-md {
+    .cell-md-#{$i} {
+      flex-basis: (100% / $cellCount-md) * $i;
+      max-width: (100% / $cellCount-md) * $i;
+    }
+
+    .cell-md--offset-#{$i} {
+      margin-left: (100% / $cellCount-md) * $i;
+    }
+  }
+}
+
+
+//-----------------------------------------------------------------
+// LG cellumn Generator
+@include respond-to("large") {
+  .cell-lg,
+  .cell-lg-1,
+  .cell-lg-2,
+  .cell-lg-3,
+  .cell-lg-4,
+  .cell-lg-5,
+  .cell-lg-6,
+  .cell-lg-7,
+  .cell-lg-8,
+  .cell-lg-9,
+  .cell-lg-10,
+  .cell-lg-11,
+  .cell-lg-12 {
+    flex: 0 0 auto;
+    padding-right: $baseMargin;
+    padding-left: $baseMargin;
+  }
+
+  .cell-lg {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  }
+
+  .cell-lg--offset-0 {
+    margin-left: 0;
+  }
+
+  @for $i from 1 through $cellCount-lg {
+    .cell-lg-#{$i} {
+      flex-basis: (100% / $cellCount-lg) * $i;
+      max-width: (100% / $cellCount-lg) * $i;
+    }
+
+    .cell-lg--offset-#{$i} {
+      margin-left: (100% / $cellCount-lg) * $i;
+    }
+  }
+}
+
+
+//-----------------------------------------------------------------
+// General cellumn Element Modifier
+
+[class*="cell"] {
+  // Sorting
+  &[class*="--reverse"] {
+    flex-direction: column-reverse;
+  }
+
+  &[class*="--first"] {
+    order: -1;
+  }
+
+  &[class*="--last"] {
+    order: 1;
+  }
+
+  &[class*="--collapse"] {
+    padding: 0;
+  }
+
+  &[class*="--expand"] {
+    padding-top: $baseMargin;
+    padding-bottom: $baseMargin;
+  }
+}
