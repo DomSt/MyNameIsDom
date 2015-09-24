@@ -21,10 +21,10 @@ code {
     width: 100%;
     height: 100%;
     background: rgba(255, 165, 0, 0.08); }
-  .gridTest__cell--md {
+  .gridTest__cell:nth-child(1n+7) {
     display: none; }
     @media screen and (min-width: 30em) {
-      .gridTest__cell--md {
+      .gridTest__cell:nth-child(1n+7) {
         display: inherit; } }
 
 .lib-section {
