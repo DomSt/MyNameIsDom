@@ -203,20 +203,36 @@ a {
 .u-chunk::before {
   content: "";
   position: absolute;
-  left: calc(-5% * 1.11111);
+  left: -2rem;
   display: block;
-  width: calc(5% * 1.11111);
+  width: 1rem;
   border-top: 6px solid #000; }
+  @media screen and (min-width: 30em) {
+    .u-chunk::before {
+      width: 2rem; } }
+  @media screen and (min-width: 40em) {
+    .u-chunk::before {
+      left: -4rem;
+      width: 3rem; } }
 
-.frame--fluid {
+.frame {
   margin-right: auto;
   margin-left: auto;
   padding-right: 2rem;
   padding-left: 2rem; }
   @media screen and (min-width: 30em) {
-    .frame--fluid {
+    .frame {
       padding-right: 2rem;
       padding-left: 2rem; } }
+  @media screen and (min-width: 40em) {
+    .frame {
+      padding-right: 4rem;
+      padding-left: 4rem; } }
+  @media screen and (min-width: 75em) {
+    .frame {
+      padding-right: 2rem;
+      padding-left: 2rem;
+      max-width: 90vw; } }
 
 .group {
   display: -webkit-flex;
@@ -760,7 +776,7 @@ a {
   .cell-lg--offset-12 {
     margin-left: 100%; } }
 
-@media screen and (min-width: 56em) {
+@media screen and (min-width: 75em) {
   .cell-xl,
   .cell-xl-1,
   .cell-xl-2,
@@ -988,7 +1004,7 @@ a {
     color: #a0a4a3; }
 
 .itemList__footer {
-  padding: .5rem;
+  padding-top: .5rem;
   text-align: right;
   border-top: 3px solid #000; }
 

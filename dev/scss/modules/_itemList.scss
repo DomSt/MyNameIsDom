@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
-// #TODO:30 Add images to item list.
-// #DOING:0 Add second column on xlarge.
+// #DOING:0 Add images to item list.
+// #DONE:10 Add second column on xlarge.
 
 //=================================================================
 //  ITEMLIST MODULE
@@ -81,7 +81,7 @@
 }
 
 .itemList__footer {
-  padding: .5rem;
+  padding-top: .5rem;
   text-align: right;
   border-top: 3px solid $primaryContent;
 }

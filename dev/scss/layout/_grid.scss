@@ -7,7 +7,7 @@
 
 //-----------------------------------------------------------------
 // Frame Element
-.frame--fluid {
+.frame {
   margin-right: auto;
   margin-left: auto;
   padding-right: $basePadding;
@@ -16,6 +16,17 @@
   @include respond-to("small") {
     padding-right: $basePadding;
     padding-left: $basePadding;
+  }
+
+  @include respond-to("medium") {
+    padding-right: $basePadding * 2;
+    padding-left: $basePadding * 2;
+  }
+
+  @include respond-to("xlarge") {
+    padding-right: $basePadding;
+    padding-left: $basePadding;
+    max-width: 90vw;
   }
 }
 
@@ -252,7 +263,7 @@
 
 //-----------------------------------------------------------------
 // XL cellumn Generator
-@include respond-to("large") {
+@include respond-to("xlarge") {
   .cell-xl,
   .cell-xl-1,
   .cell-xl-2,

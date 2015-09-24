@@ -45,10 +45,19 @@
 .u-chunk::before {
   content: "";
   position: absolute;
-  left: calc(-5% * 1.11111);
+  left: - $basePadding;
   display: block;
-  width: calc(5% * 1.11111);
+  width: $baseMargin;
   border-top: 6px solid $primaryContent;
 
-  // #TODO:0 Fix width and positioning problem on small screens
+  @include respond-to("small") {
+    width: $basePadding;
+  }
+
+  @include respond-to("medium") {
+    left: - (2 * $basePadding);
+    width: 1.5 * $basePadding;
+  }
+
+  // #DONE:0 Fix width and positioning problem on small screens
 }
