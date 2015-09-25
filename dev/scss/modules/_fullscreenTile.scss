@@ -6,12 +6,8 @@
 //  FULL SCREEN BLOCK
 //=================================================================
 
-.fullScreenBlock {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: calc(90% * .8);
-  height: 60vh;
+.fullscreenTile {
+
   padding: 15%;
   font-weight: 400;
   color: $primaryBG;
@@ -23,15 +19,14 @@
   }
 
   @include respond-to("large") {
-    width: calc(90% * .6);
-    padding: 10%;
+    padding-top: 20%;
+    padding-bottom: 20%;
   }
 }
 
-.fullScreenBlock__container {
+.fullscreenTile__container {
   display: flex;
   align-items: center;
-  justify-content: center;
   width: 100%;
   height: 100vh;
 }

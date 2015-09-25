@@ -915,41 +915,27 @@ a {
   padding-top: 1rem;
   padding-bottom: 1rem; }
 
-.fullScreenBlock {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: calc(90% * .8);
-  height: 60vh;
+.fullscreenTile {
   padding: 15%;
   font-weight: 400;
   color: #fff;
   background-color: #000; }
   @media screen and (min-width: 40em) {
-    .fullScreenBlock {
+    .fullscreenTile {
       font-size: 1.5rem;
       line-height: 1.45833; } }
   @media screen and (min-width: 56em) {
-    .fullScreenBlock {
-      width: calc(90% * .6);
-      padding: 10%; } }
+    .fullscreenTile {
+      padding-top: 20%;
+      padding-bottom: 20%; } }
 
-.fullScreenBlock__container {
+.fullscreenTile__container {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   width: 100%;
   height: 100vh; }
 

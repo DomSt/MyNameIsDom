@@ -54,12 +54,6 @@ body {
   .lib-description > h4 {
     margin-bottom: 1em; }
 
-pre {
-  font-size: .875rem;
-  color: #fff;
-  background: #000;
-  overflow: scroll; }
-
 .lib-block {
   display: block;
   min-height: 1rem;
